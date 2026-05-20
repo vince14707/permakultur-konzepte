@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog – Permakultur-Konzepte | Vincent Hahn</title>
+<meta name="description" content="Praxiswissen zu Permakultur, Bodenaufbau und regenerativer Flächennutzung – von Vincent Hahn, Permakultur-Designer aus Bayern.">
+<link rel="canonical" href="https://permakultur-konzepte.de/blog/">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Blog – Permakultur-Konzepte">
+<meta property="og:description" content="Praxiswissen zu Permakultur, Bodenaufbau und regenerativer Flächennutzung.">
+<meta property="og:url" content="https://permakultur-konzepte.de/blog/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --green:#1c4a2a;--green-mid:#2d6b3f;--green-light:#4a8c5c;
+  --amber:#c9921a;--amber-light:#e8b84b;
+  --cream:#f5f0e4;--cream-dark:#ede5d0;--white:#fdfcf8;
+  --text:#1a2a1e;--text-mid:#3a4a3e;--text-light:#6b7d6e;
+}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden;}
+nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop-filter:blur(16px);border-bottom:1px solid rgba(28,74,42,0.1);padding:0.8rem 3rem;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:1100px;margin:0 auto;}
+.nav-logo{display:flex;align-items:center;gap:0.8rem;text-decoration:none;}
+.nav-brand{font-family:'Playfair Display',serif;font-size:1rem;color:var(--green);line-height:1.1;}
+.nav-sub{font-size:0.6rem;color:var(--text-light);font-weight:300;letter-spacing:0.06em;}
+.nav-links{display:flex;align-items:center;gap:1.8rem;}
+.nl{font-size:0.82rem;color:var(--text-mid);transition:color 0.2s;text-decoration:none;font-family:'Jost',sans-serif;font-weight:400;}
+.nl:hover{color:var(--green);font-weight:500;}
+.nl.active{color:var(--green);font-weight:500;}
+.nl.cta{background:var(--green);color:white;padding:0.5rem 1.3rem;border-radius:4px;font-size:0.8rem;font-weight:500;}
+.nl.cta:hover{background:var(--green-mid);}
+
+/* HERO */
+.blog-hero{background:var(--green);padding:5rem 2rem 4rem;text-align:center;}
+.blog-hero-inner{max-width:760px;margin:0 auto;}
+.eyebrow{font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--amber-light);font-weight:500;margin-bottom:1rem;}
+.blog-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:white;line-height:1.15;margin-bottom:1rem;font-weight:600;}
+.blog-hero h1 em{font-style:italic;color:var(--amber-light);}
+.blog-hero p{font-size:0.95rem;color:rgba(255,255,255,0.65);font-weight:300;line-height:1.8;max-width:540px;margin:0 auto;}
+
+/* ARTIKEL GRID */
+.blog-wrap{max-width:1000px;margin:0 auto;padding:5rem 2rem 7rem;}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem;}
+
+/* ARTIKEL KARTE */
+.article-card{background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px rgba(28,74,42,0.06);transition:transform 0.2s,box-shadow 0.2s;text-decoration:none;display:block;}
+.article-card:hover{transform:translateY(-4px);box-shadow:0 8px 32px rgba(28,74,42,0.12);}
+.card-body{padding:1.8rem;}
+.card-category{font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--amber);font-weight:500;margin-bottom:0.8rem;}
+.card-title{font-family:'Playfair Display',serif;font-size:1.25rem;color:var(--text);line-height:1.25;margin-bottom:0.8rem;font-weight:600;}
+.card-title em{font-style:italic;color:var(--green);}
+.card-excerpt{font-size:0.88rem;color:var(--text-light);line-height:1.75;font-weight:300;margin-bottom:1.2rem;}
+.card-meta{font-size:0.72rem;color:var(--text-light);display:flex;align-items:center;gap:0.5rem;}
+.card-meta span{color:var(--cream-dark);}
+.card-link{font-size:0.8rem;color:var(--green);font-weight:500;display:inline-flex;align-items:center;gap:0.3rem;margin-top:1rem;}
+
+/* DIVIDER */
+.divider{width:48px;height:2px;background:var(--amber);margin:0 0 3rem;}
+
+/* FOOTER */
+footer{background:var(--green);color:white;padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;}
+.ft-b{font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:0.2rem;}
+.ft-s{font-size:0.72rem;color:rgba(255,255,255,0.5);font-weight:300;}
+.ft-l{display:flex;gap:1.5rem;flex-wrap:wrap;}
+.ft-l a{color:rgba(255,255,255,0.6);font-size:0.78rem;text-decoration:none;transition:color 0.2s;}
+.ft-l a:hover{color:white;}
+.ft-r{font-size:0.75rem;color:rgba(255,255,255,0.4);text-align:right;line-height:1.6;}
+
+@media(max-width:768px){
+  nav{padding:0.8rem 1.2rem;}
+  .nav-links{gap:1rem;}
+  .nl{font-size:0.75rem;}
+  .blog-hero{padding:3.5rem 1.5rem 3rem;}
+  .blog-wrap{padding:3rem 1.2rem 5rem;}
+  footer{flex-direction:column;padding:2rem 1.5rem;text-align:center;}
+  .ft-r{text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a class="nav-logo" href="https://permakultur-konzepte.de">
+      <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_001.png" style="height:48px;width:auto;display:block;" alt="Permakultur-Konzepte Logo">
+      <div>
+        <div class="nav-brand">Permakultur-Konzepte</div>
+        <div class="nav-sub">für regenerative Flächennutzung</div>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a class="nl" href="https://permakultur-konzepte.de/#leistungen">Leistungen</a>
+      <a class="nl" href="https://permakultur-konzepte.de/#ueber">Über mich</a>
+      <a class="nl active" href="/blog/">Blog</a>
+      <a class="nl cta" href="https://permakultur-konzepte.de/#analyse">Kontakt & Anfrage</a>
+    </div>
+  </div>
+</nav>
+
+<div class="blog-hero">
+  <div class="blog-hero-inner">
+    <div class="eyebrow">Praxiswissen & Perspektiven</div>
+    <h1>Permakultur <em>verstehen</em> –<br>nicht nur anwenden</h1>
+    <p>Bodenaufbau, Wassermanagement, regenerative Pflege – Einblicke aus der Planungs- und Beratungspraxis.</p>
+  </div>
+</div>
+
+<div class="blog-wrap">
+  <div class="divider"></div>
+
+  <div class="blog-grid">
+
+    <!-- ARTIKEL 1 -->
+    <a class="article-card" href="/blog/humusaufbau-grundlagen/">
+      <div class="card-body">
+        <div class="card-category">Bodenaufbau · Praxis</div>
+        <div class="card-title">Humusaufbau: Was wirklich <em>funktioniert</em> – und was nicht</div>
+        <div class="card-excerpt">Kompost allein baut keinen Humus auf. Was Böden wirklich brauchen, welche Fehler die meisten machen – und wie Permakultur das anders löst.</div>
+        <div class="card-meta">Vincent Hahn <span>·</span> 18. Mai 2026 <span>·</span> 8 min</div>
+        <div class="card-link">Artikel lesen →</div>
+      </div>
+    </a>
+
+    <!-- WEITERE ARTIKEL HIER EINFÜGEN -->
+    <!-- Kopiere den obigen Block und passe Titel, URL, Datum, Excerpt an -->
+
+  </div>
+</div>
+
+<footer>
+  <div>
+    <div class="ft-b">Permakultur-Konzepte</div>
+    <div class="ft-s">Vincent Hahn · Für regenerative Flächennutzung</div>
+  </div>
+  <div class="ft-l">
+    <a href="https://permakultur-konzepte.de">Start</a>
+    <a href="https://permakultur-konzepte.de/#leistungen">Leistungen</a>
+    <a href="https://permakultur-konzepte.de/#ueber">Über mich</a>
+    <a href="/blog/">Blog</a>
+    <a href="https://permakultur-konzepte.de/#impressum">Impressum</a>
+    <a href="https://permakultur-konzepte.de/#datenschutz">Datenschutz</a>
+  </div>
+  <div class="ft-r">vincent@permakultur-konzepte.de<br><span style="font-size:0.7rem;opacity:0.4;">Demollstraße 10 · 82407 Wielenbach</span></div>
+</footer>
+
+</body>
+</html>
