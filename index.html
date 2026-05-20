@@ -1132,6 +1132,13 @@ function downloadPDF(){
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
+
+// Direktlink zu Kontaktformular von externen Seiten
+if (window.location.hash === '#analyse') {
+  window.addEventListener('DOMContentLoaded', function() {
+    show('analyse');
+  });
+}
 </script>
 </body>
 </html>
