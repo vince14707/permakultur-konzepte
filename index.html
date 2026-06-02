@@ -1296,7 +1296,8 @@ if (window.location.hash === '#analyse') {
 
 <script>
   const FAQ_WORKER_URL = "https://faq-bot.vincent-hahn.workers.dev";
-  let faqHistory = [{ role: "system", content: "You are a helpful Permaculture Gardening Chatbot for Permakultur-Konzepte.de." }];
+  let faqHistory = [];
+  const SYSTEM_PROMPT = "You are a helpful Permaculture Gardening Chatbot for Permakultur-Konzepte.de.";
 
   function faqBotToggle() {
     const win = document.getElementById("faq-bot-window");
@@ -1312,7 +1313,6 @@ if (window.location.hash === '#analyse') {
     box.scrollTop = box.scrollHeight;
     return div;
   }
-
 
   async function faqBotSend() {
     const input = document.getElementById("faq-bot-input");
@@ -1331,7 +1331,7 @@ if (window.location.hash === '#analyse') {
       const res = await fetch(FAQ_WORKER_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ model: "gpt-3.5-turbo", messages: faqHistory }),
+        body: JSON.stringify({ system: SYSTEM_PROMPT, model: "gpt-3.5-turbo", messages: faqHistory }),
       });
       const data = await res.json();
       const reply = data.content?.[0]?.text || "Entschuldigung, da ist etwas schiefgelaufen.";
