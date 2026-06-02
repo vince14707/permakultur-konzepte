@@ -1286,6 +1286,7 @@ if (window.location.hash === '#analyse') {
     <button id="faq-bot-close" onclick="faqBotToggle()">×</button>
   </div>
   <div id="faq-bot-messages">
+    <div class="faq-msg bot">Hallo! Ich beantworte Fragen zu Permakultur und zu Vincents Leistungen. Womit kann ich helfen?</div>
   </div>
   <div id="faq-bot-input-row">
     <input id="faq-bot-input" type="text" placeholder="Ihre Frage..." onkeydown="if(event.key==='Enter')faqBotSend()" />
@@ -1300,9 +1301,6 @@ if (window.location.hash === '#analyse') {
   function faqBotToggle() {
     const win = document.getElementById("faq-bot-window");
     win.classList.toggle("open");
-    if (win.classList.contains("open") && faqHistory.length === 1) { // Only send welcome message on first open
-      faqBotSendInitialMessage();
-    }
   }
 
   function faqBotAddMsg(text, role) {
@@ -1313,28 +1311,6 @@ if (window.location.hash === '#analyse') {
     box.appendChild(div);
     box.scrollTop = box.scrollHeight;
     return div;
-  }
-
-  async function faqBotSendInitialMessage() {
-    const btn = document.getElementById("faq-bot-send");
-    btn.disabled = true;
-    const typing = faqBotAddMsg("…", "bot typing");
-    try {
-      const res = await fetch(FAQ_WORKER_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: faqHistory }),
-      });
-      const data = await res.json();
-      const reply = data.content?.[0]?.text || "Hallo! Ich beantworte Fragen zu Permakultur und zu Vincents Leistungen. Womit kann ich helfen?";
-      typing.textContent = reply;
-      typing.classList.remove("typing");
-      faqHistory.push({ role: "assistant", content: reply });
-    } catch (e) {
-      typing.textContent = "Verbindungsfehler. Bitte versuchen Sie es später erneut.";
-      typing.classList.remove("typing");
-    }
-    btn.disabled = false;
   }
 
 
