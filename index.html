@@ -1149,5 +1149,202 @@ if (window.location.hash === '#analyse') {
   });
 }
 </script>
+<!-- FAQ-Bot Widget: In index.html vor </body> einfügen -->
+<!-- WORKER_URL unten anpassen nach dem ersten Deploy -->
+
+<style>
+  #faq-bot-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    background: #2d6a4f;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 22px;
+    font-size: 15px;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s;
+  }
+  #faq-bot-btn:hover { background: #1b4332; }
+
+  #faq-bot-window {
+    position: fixed;
+    bottom: 82px;
+    right: 24px;
+    z-index: 9998;
+    width: 340px;
+    max-width: calc(100vw - 32px);
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+    font-family: inherit;
+  }
+  #faq-bot-window.open { display: flex; }
+
+  #faq-bot-header {
+    background: #2d6a4f;
+    color: white;
+    padding: 14px 18px;
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #faq-bot-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+  }
+
+  #faq-bot-messages {
+    padding: 16px;
+    flex: 1;
+    overflow-y: auto;
+    max-height: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .faq-msg {
+    max-width: 88%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .faq-msg.bot {
+    background: #f0f4f1;
+    color: #1a1a1a;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+  }
+  .faq-msg.user {
+    background: #2d6a4f;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+  }
+  .faq-msg.typing {
+    color: #888;
+    font-style: italic;
+  }
+
+  #faq-bot-input-row {
+    display: flex;
+    border-top: 1px solid #e8e8e8;
+    padding: 10px 12px;
+    gap: 8px;
+  }
+  #faq-bot-input {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-family: inherit;
+    outline: none;
+    resize: none;
+  }
+  #faq-bot-input:focus { border-color: #2d6a4f; }
+  #faq-bot-send {
+    background: #2d6a4f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  #faq-bot-send:hover { background: #1b4332; }
+  #faq-bot-send:disabled { background: #aaa; cursor: not-allowed; }
+</style>
+
+<button id="faq-bot-btn" onclick="faqBotToggle()">
+  💬 Frage stellen
+</button>
+
+<div id="faq-bot-window">
+  <div id="faq-bot-header">
+    <span>FAQ – Permakultur</span>
+    <button id="faq-bot-close" onclick="faqBotToggle()">×</button>
+  </div>
+  <div id="faq-bot-messages">
+    <div class="faq-msg bot">Hallo! Ich beantworte Fragen zu Permakultur und zu Vincents Leistungen. Womit kann ich helfen?</div>
+  </div>
+  <div id="faq-bot-input-row">
+    <input id="faq-bot-input" type="text" placeholder="Ihre Frage..." onkeydown="if(event.key==='Enter')faqBotSend()" />
+    <button id="faq-bot-send" onclick="faqBotSend()">↑</button>
+  </div>
+</div>
+
+<script>
+  const FAQ_WORKER_URL = "https://faq-bot.vincent-hahn.workers.dev";
+  let faqHistory = [];
+
+  function faqBotToggle() {
+    const win = document.getElementById("faq-bot-window");
+    win.classList.toggle("open");
+  }
+
+  function faqBotAddMsg(text, role) {
+    const box = document.getElementById("faq-bot-messages");
+    const div = document.createElement("div");
+    div.className = "faq-msg " + role;
+    div.textContent = text;
+    box.appendChild(div);
+    box.scrollTop = box.scrollHeight;
+    return div;
+  }
+
+  async function faqBotSend() {
+    const input = document.getElementById("faq-bot-input");
+    const btn = document.getElementById("faq-bot-send");
+    const text = input.value.trim();
+    if (!text) return;
+
+    input.value = "";
+    btn.disabled = true;
+    faqBotAddMsg(text, "user");
+    faqHistory.push({ role: "user", content: text });
+
+    const typing = faqBotAddMsg("…", "bot typing");
+
+    try {
+      const res = await fetch(FAQ_WORKER_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ messages: faqHistory }),
+      });
+      const data = await res.json();
+      const reply = data.content?.[0]?.text || "Entschuldigung, da ist etwas schiefgelaufen.";
+      typing.textContent = reply;
+      typing.classList.remove("typing");
+      faqHistory.push({ role: "assistant", content: reply });
+    } catch (e) {
+      typing.textContent = "Verbindungsfehler. Bitte versuchen Sie es später erneut.";
+      typing.classList.remove("typing");
+    }
+
+    btn.disabled = false;
+    input.focus();
+  }
+</script>
 </body>
 </html>
