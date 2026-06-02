@@ -1331,7 +1331,7 @@ if (window.location.hash === '#analyse') {
       const res = await fetch(FAQ_WORKER_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: faqHistory }),
+        body: JSON.stringify({ model: "gpt-3.5-turbo", messages: faqHistory }),
       });
       const data = await res.json();
       const reply = data.content?.[0]?.text || "Entschuldigung, da ist etwas schiefgelaufen.";
