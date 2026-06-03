@@ -1289,7 +1289,7 @@ if (window.location.hash === '#analyse') {
 
     <div class="faq-msg bot">Hallo! Ich beantworte Fragen zu Permakultur und zu Vincents Leistungen. Womit kann ich helfen?</div>
   </div>
-<a href="/#p-analyse" id="faq-bot-cta" style="display:block;margin:0;padding:10px 14px;background:#2d6a4f;color:white;border-radius:0;text-align:center;font-size:14px;text-decoration:none;">→ Kontaktformular öffnen</a>
+<a href="/#p-analyse" id="faq-bot-cta" onclick="faqBotTrackCTA()" style="display:block;margin:0;padding:10px 14px;background:#2d6a4f;color:white;border-radius:0;text-align:center;font-size:14px;text-decoration:none;">→ Kontaktformular öffnen</a>
   <div id="faq-bot-input-row">
     <input id="faq-bot-input" type="text" placeholder="Ihre Frage..." onkeydown="if(event.key==='Enter')faqBotSend()" />
     <button id="faq-bot-send" onclick="faqBotSend()">↑</button>
@@ -1346,7 +1346,16 @@ if (window.location.hash === '#analyse') {
     }
 
     btn.disabled = false;
-    input.focus();
+      input.focus();
+    }
+
+  function faqBotTrackCTA() {
+    if (faqHistory.length === 0) return;
+    fetch(FAQ_WORKER_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ messages: faqHistory, ctaClicked: true }),
+    });
   }
 </script>
 </body>
