@@ -1349,14 +1349,16 @@ if (window.location.hash === '#analyse') {
       input.focus();
     }
 
-  function faqBotTrackCTA() {
-    if (faqHistory.length === 0) return;
+function faqBotTrackCTA() {
+  if (faqHistory.length > 0) {
     fetch(FAQ_WORKER_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ messages: faqHistory, ctaClicked: true }),
     });
   }
+  return true;
+}
 </script>
 </body>
 </html>
