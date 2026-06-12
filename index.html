@@ -905,6 +905,29 @@ function declineCookies(){
   if(b) b.classList.remove('visible');
 }
 
+function updateFaqBtnPosition(){
+  var banner=document.getElementById('cookie-banner');
+  var btn=document.getElementById('faq-bot-btn');
+  var win=document.getElementById('faq-bot-window');
+  if(!banner||!btn)return;
+  if(banner.classList.contains('visible')){
+    var h=banner.offsetHeight;
+    btn.style.bottom=(h+16)+'px';
+    if(win)win.style.bottom=(h+74)+'px';
+  }else{
+    btn.style.bottom='24px';
+    if(win)win.style.bottom='82px';
+  }
+}
+var cookieObserver=new MutationObserver(updateFaqBtnPosition);
+document.addEventListener('DOMContentLoaded',function(){
+  var banner=document.getElementById('cookie-banner');
+  if(banner){
+    cookieObserver.observe(banner,{attributes:true,attributeFilter:['class']});
+    updateFaqBtnPosition();
+  }
+});
+
 /* ===== NAVIGATION ===== */
 function show(p){
   document.querySelectorAll('.page').forEach(function(el){el.classList.remove('active');});
@@ -1362,3 +1385,4 @@ function faqBotTrackCTA() {
 </script>
 </body>
 </html>
+
