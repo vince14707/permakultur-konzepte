@@ -271,9 +271,9 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
   .hamburger{display:flex !important;}
   .mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:white;border-bottom:2px solid rgba(28,74,42,0.1);z-index:200;flex-direction:column;padding:0.5rem 0;box-shadow:0 8px 24px rgba(0,0,0,0.1);}
   .mobile-menu.open{display:flex;}
-  .mobile-menu button{text-align:left;padding:0.9rem 1.5rem;font-size:0.9rem;font-family:'Jost',sans-serif;color:var(--text);background:none;border:none;cursor:pointer;border-bottom:1px solid rgba(28,74,42,0.06);}
-  .mobile-menu button:last-child{border-bottom:none;}
-  .mobile-menu button:hover{background:var(--cream);}
+  .mobile-menu button,.mobile-menu a{display:block;text-align:left;padding:0.9rem 1.5rem;font-size:0.9rem;font-family:'Jost',sans-serif;color:var(--text);text-decoration:none;background:none;border:none;cursor:pointer;border-bottom:1px solid rgba(28,74,42,0.06);}
+  .mobile-menu button:last-child,.mobile-menu a:last-child{border-bottom:none;}
+  .mobile-menu button:hover,.mobile-menu a:hover{background:var(--cream);}
   .ab-img{display:block;max-height:380px;overflow:hidden;}
   .ab-img img{width:100%;height:380px;object-fit:cover;object-position:center center;}
   .hero-s,.how-s,.h-cta,.pg-h,.lb,.ab-pg,.an-pg,.kt-pg,.im-pg{padding-left:1.5rem;padding-right:1.5rem;}
@@ -326,7 +326,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
     <button onclick="show('leistungen');closeNav()">Leistungen</button>
     <button onclick="show('kurse');closeNav()">Kurse & Workshops</button>
     <button onclick="show('ueber');closeNav()">Über mich</button>
-    <a href="/blog/" onclick="closeNav()" style="display:block;">Blog</a>
+    <a href="/blog/" onclick="closeNav()">Blog</a>
   <button onclick="show('analyse');closeNav()" style="color:var(--green);font-weight:500;">Kontakt & Anfrage</button>
   </div>
     </div>
