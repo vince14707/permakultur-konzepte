@@ -1256,12 +1256,16 @@ function downloadPDF(){
   URL.revokeObjectURL(url);
 }
 
-// Direktlink zu Kontaktformular von externen Seiten
-if (window.location.hash === '#analyse') {
-  window.addEventListener('DOMContentLoaded', function() {
-    show('analyse');
-  });
-}
+// Direktlink von externen Seiten (z.B. Blog) zu einer bestimmten Sektion
+(function() {
+  var validPages = ['home','leistungen','kurse','ueber','analyse'];
+  var hash = window.location.hash.replace('#','');
+  if (validPages.indexOf(hash) !== -1) {
+    window.addEventListener('DOMContentLoaded', function() {
+      show(hash);
+    });
+  }
+})();
 </script>
 <!-- FAQ-Bot Widget: In index.html vor </body> einfügen -->
 <!-- WORKER_URL unten anpassen nach dem ersten Deploy -->
