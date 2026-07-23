@@ -1325,13 +1325,16 @@ function downloadPDF(){
     padding: 14px 22px;
     font-size: 15px;
     font-family: inherit;
-    cursor: pointer;
+    cursor: grab;
     box-shadow: 0 4px 16px rgba(0,0,0,0.18);
     display: flex;
     align-items: center;
     gap: 8px;
     transition: background 0.2s;
+    touch-action: none;
+    user-select: none;
   }
+  #faq-bot-btn:active { cursor: grabbing; }
   #faq-bot-btn:hover { background: #1b4332; }
 
   #faq-bot-window {
@@ -1360,6 +1363,9 @@ function downloadPDF(){
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: move;
+    touch-action: none;
+    user-select: none;
   }
   #faq-bot-close {
     background: none;
@@ -1436,7 +1442,7 @@ function downloadPDF(){
   #faq-bot-send:disabled { background: #aaa; cursor: not-allowed; }
 </style>
 
-<button id="faq-bot-btn" onclick="faqBotToggle()">
+<button id="faq-bot-btn">
   💬 Frage stellen
 </button>
 
@@ -1455,6 +1461,74 @@ function downloadPDF(){
     <button id="faq-bot-send" onclick="faqBotSend()">↑</button>
   </div>
 </div>
+
+<script>
+  // --- Verschiebbarkeit: Button (geschlossen) & Fenster (per Header, geöffnet) ---
+  function makeDraggable(el, handle, opts) {
+    opts = opts || {};
+    let dragging = false, moved = false, startX, startY, origLeft, origTop;
+
+    function clamp(el) {
+      const r = el.getBoundingClientRect();
+      const maxLeft = window.innerWidth - r.width - 8;
+      const maxTop = window.innerHeight - r.height - 8;
+      let left = parseFloat(el.style.left);
+      let top = parseFloat(el.style.top);
+      left = Math.min(Math.max(8, left), Math.max(8, maxLeft));
+      top = Math.min(Math.max(8, top), Math.max(8, maxTop));
+      el.style.left = left + "px";
+      el.style.top = top + "px";
+    }
+
+    function onDown(e) {
+      dragging = true; moved = false;
+      const p = e.touches ? e.touches[0] : e;
+      const r = el.getBoundingClientRect();
+      // Switch from right/bottom-based to left/top-based positioning on first drag
+      el.style.left = r.left + "px";
+      el.style.top = r.top + "px";
+      el.style.right = "auto";
+      el.style.bottom = "auto";
+      startX = p.clientX; startY = p.clientY;
+      origLeft = r.left; origTop = r.top;
+      document.addEventListener("mousemove", onMove);
+      document.addEventListener("mouseup", onUp);
+      document.addEventListener("touchmove", onMove, {passive:false});
+      document.addEventListener("touchend", onUp);
+    }
+
+    function onMove(e) {
+      if (!dragging) return;
+      const p = e.touches ? e.touches[0] : e;
+      const dx = p.clientX - startX, dy = p.clientY - startY;
+      if (Math.abs(dx) > 4 || Math.abs(dy) > 4) moved = true;
+      if (moved && e.cancelable) e.preventDefault();
+      el.style.left = (origLeft + dx) + "px";
+      el.style.top = (origTop + dy) + "px";
+      clamp(el);
+    }
+
+    function onUp(e) {
+      dragging = false;
+      document.removeEventListener("mousemove", onMove);
+      document.removeEventListener("mouseup", onUp);
+      document.removeEventListener("touchmove", onMove);
+      document.removeEventListener("touchend", onUp);
+      if (!moved && opts.onClick) opts.onClick();
+    }
+
+    handle.addEventListener("mousedown", onDown);
+    handle.addEventListener("touchstart", onDown, {passive:true});
+    window.addEventListener("resize", () => { if (el.style.left) clamp(el); });
+  }
+
+  const faqBtnEl = document.getElementById("faq-bot-btn");
+  const faqWinEl = document.getElementById("faq-bot-window");
+  const faqHeaderEl = document.getElementById("faq-bot-header");
+
+  makeDraggable(faqBtnEl, faqBtnEl, { onClick: () => faqBotToggle() });
+  makeDraggable(faqWinEl, faqHeaderEl, {});
+</script>
 
 <script>
   const FAQ_WORKER_URL = "https://faq-bot.vincent-hahn.workers.dev";
