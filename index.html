@@ -349,6 +349,9 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
   .hero-s,.how-s,.h-cta,.pg-h,.lb,.ab-pg,.an-pg,.kt-pg,.im-pg{padding-left:1.5rem;padding-right:1.5rem;}
   .faq{grid-template-columns:1fr;}
   .reg-grid{grid-template-columns:1fr;}
+  .kurse-grid{grid-template-columns:1fr !important;}
+  .gallery-grid-2{grid-template-columns:1fr !important;}
+  #p-kurse > div{padding-left:1.2rem;padding-right:1.2rem;}
   .cb-text{font-size:0.75rem;}
 }
 </style>
@@ -708,7 +711,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
   </div>
 
   <div style="max-width:1000px;margin:0 auto;padding:2rem 2rem 0;">
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;">
+    <div class="kurse-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;">
 
       <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:12px;padding:2rem 1.6rem;display:flex;flex-direction:column;box-shadow:0 2px 16px rgba(28,74,42,0.05);">
         <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.13em;color:var(--green);font-weight:600;margin-bottom:0.6rem;">Für Einsteiger</div>
@@ -885,7 +888,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 
     <!-- Planung -->
     <div id="gsec-planung" class="gsec" style="display:none;">
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
+      <div class="gallery-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_002.jpg','Permakultur-Garten · Dresden / Sachsen, DE')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
           <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_002.jpg" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Permakultur-Garten Planung Dresden Sachsen">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
@@ -933,7 +936,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
         <h3 style="font-family:'Playfair Display',serif;font-size:1.2rem;color:white;margin:0;">Permakultur-Garten <em style="color:var(--amber-light);">Westerwald</em></h3>
         <p style="color:rgba(255,255,255,0.5);font-size:0.82rem;margin:0.4rem 0 0;">Rheinland-Pfalz, DE · Selbstversorgergarten mit Feuchtbiotopen, Erdkeller, Erdgewächshaus, Nuss-Wäldchen &amp; Trüffelplantage</p>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
+      <div class="gallery-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_007.jpg','Erdkeller unter dem Gemüsegarten – handgemauerter Natursteinbogen · Westerwald, DE')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
           <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_007.jpg" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Erdkeller unter Gemüsegarten Umsetzung Westerwald">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
