@@ -714,7 +714,10 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
     <div class="kurse-grid" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;">
 
       <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:12px;padding:2rem 1.6rem;display:flex;flex-direction:column;box-shadow:0 2px 16px rgba(28,74,42,0.05);">
-        <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.13em;color:var(--green);font-weight:600;margin-bottom:0.6rem;">Für Einsteiger</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.6rem;">
+          <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.13em;color:var(--green);font-weight:600;">Für Einsteiger</div>
+          <div style="font-size:0.7rem;color:var(--text-light);background:var(--cream-dark);padding:0.2rem 0.6rem;border-radius:20px;">ca. 2 Std.</div>
+        </div>
         <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--text);margin-bottom:0.8rem;line-height:1.3;">Einführungskurs Permakultur-Design</div>
         <div style="font-size:0.85rem;color:var(--text-light);line-height:1.7;font-weight:300;flex:1;">Grundprinzipien, Zonierung, Wasser- und Bodenmanagement anhand praxisnaher Beispiele. Für alle, die verstehen wollen, wie permakulturelles Denken funktioniert – ohne Vorwissen.</div>
       </div>
@@ -1347,19 +1350,27 @@ function downloadPDF(){
     background: #2d6a4f;
     color: white;
     border: none;
-    border-radius: 50px;
-    padding: 14px 22px;
-    font-size: 15px;
+    border-radius: 50%;
+    width: 84px;
+    height: 84px;
+    padding: 0;
+    font-size: 13px;
     font-family: inherit;
     cursor: grab;
     box-shadow: 0 4px 16px rgba(0,0,0,0.18);
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: 2px;
+    line-height: 1.2;
+    text-align: center;
     transition: background 0.2s;
     touch-action: none;
     user-select: none;
+    flex-shrink: 0;
   }
+  #faq-bot-btn .fb-icon{font-size:20px;line-height:1;}
   #faq-bot-btn:active { cursor: grabbing; }
   #faq-bot-btn:hover { background: #1b4332; }
 
@@ -1469,7 +1480,7 @@ function downloadPDF(){
 </style>
 
 <button id="faq-bot-btn" onclick="faqBotToggle()">
-  💬 Frage stellen
+  <span class="fb-icon">💬</span><span>Frage<br>stellen</span>
 </button>
 
 <div id="faq-bot-window">
