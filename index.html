@@ -235,7 +235,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 .cal-placeholder h2{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--text);margin-bottom:0.6rem;}
 .cal-placeholder p{font-size:0.88rem;color:var(--text-light);line-height:1.7;max-width:420px;margin:0 auto;}
 .l-num{position:absolute;top:-0.1rem;right:1.2rem;font-family:'Playfair Display',serif;font-size:7rem;font-weight:700;line-height:1;color:rgba(255,255,255,0.1);z-index:1;pointer-events:none;letter-spacing:-0.04em;}
-@media(max-width:900px){.kf-row{grid-template-columns:1fr;}}
 .lc{padding:0 0 0 2.5rem;}
 .lc p{font-size:0.92rem;color:var(--text-mid);line-height:1.85;font-weight:300;margin-bottom:1rem;}
 .ll{list-style:none;margin-bottom:1.2rem;}
@@ -332,6 +331,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 @media(max-width:900px){
   .lb,.an-in,.ab-gr,.kt-gr{grid-template-columns:1fr;}
   .lc{padding:1.5rem 0 0;}
+  .kf-row{grid-template-columns:1fr;}
   .steps-row{grid-template-columns:1fr 1fr;}
   .how-s [style*="grid-template-columns:1fr 1fr 1fr"]{grid-template-columns:1fr !important;}
   .how-s [style*="transform:translateY"]{transform:none !important;}
@@ -401,8 +401,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
     <button onclick="show('ueber');closeNav()">Über mich</button>
     <a href="/blog/" onclick="closeNav()">Blog</a>
   <button onclick="show('analyse');closeNav()" style="color:var(--green);font-weight:500;">Kontakt & Anfrage</button>
-  </div>
-    </div>
   </div>
 </nav>
 
@@ -1007,7 +1005,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       <button class="btn-a" onclick="closeGallery();show('analyse');">Eigenes Projekt anfragen</button>
     </div>
   </div>
-</div>
 
 <!-- LIGHTBOX -->
 <div id="lightbox" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.96);align-items:center;justify-content:center;flex-direction:column;">
