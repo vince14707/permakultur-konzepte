@@ -1346,30 +1346,14 @@ function downloadPDF(){
     padding: 14px 22px;
     font-size: 15px;
     font-family: inherit;
-    cursor: grab;
+    cursor: pointer;
     box-shadow: 0 4px 16px rgba(0,0,0,0.18);
     display: flex;
     align-items: center;
     gap: 8px;
     transition: background 0.2s;
-    touch-action: none;
-    user-select: none;
-    flex-shrink: 0;
   }
-  #faq-bot-btn .fb-icon{font-size:16px;line-height:1;}
-  #faq-bot-btn:active { cursor: grabbing; }
   #faq-bot-btn:hover { background: #1b4332; }
-  #faq-bot-btn.fb-dragging {
-    width: 64px;
-    height: 64px;
-    padding: 0;
-    border-radius: 50%;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0;
-  }
-  #faq-bot-btn.fb-dragging span:not(.fb-icon){display:none;}
-  #faq-bot-btn.fb-dragging .fb-icon{font-size:22px;}
 
   #faq-bot-window {
     position: fixed;
@@ -1397,9 +1381,6 @@ function downloadPDF(){
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: move;
-    touch-action: none;
-    user-select: none;
   }
   #faq-bot-close {
     background: none;
@@ -1477,7 +1458,7 @@ function downloadPDF(){
 </style>
 
 <button id="faq-bot-btn" onclick="faqBotToggle()">
-  <span class="fb-icon">💬</span><span>Frage stellen</span>
+  💬 Frage stellen
 </button>
 
 <div id="faq-bot-window">
@@ -1495,88 +1476,6 @@ function downloadPDF(){
     <button id="faq-bot-send" onclick="faqBotSend()">↑</button>
   </div>
 </div>
-
-<script>
-  // --- Verschiebbarkeit: Button (geschlossen) & Fenster (per Header, geöffnet) ---
-  // Nutzt Pointer Events (vereinheitlicht Maus/Touch) und lässt den nativen
-  // Klick unangetastet – nur nach einem echten Ziehen wird der Klick unterdrückt.
-  const EDGE_THRESHOLD = 60; // px Abstand zum linken/rechten Rand, ab dem der Button rund wird
-
-  function makeDraggable(el, handle, edgeClass) {
-    let dragging = false, moved = false, startX, startY, origLeft, origTop, pid = null;
-
-    function updateEdgeState() {
-      if (!edgeClass) return;
-      const r = el.getBoundingClientRect();
-      const nearLeft = r.left <= EDGE_THRESHOLD;
-      const nearRight = (window.innerWidth - r.right) <= EDGE_THRESHOLD;
-      el.classList.toggle(edgeClass, nearLeft || nearRight);
-    }
-
-    function clamp() {
-      const r = el.getBoundingClientRect();
-      const maxLeft = window.innerWidth - r.width - 8;
-      const maxTop = window.innerHeight - r.height - 8;
-      let left = parseFloat(el.style.left);
-      let top = parseFloat(el.style.top);
-      left = Math.min(Math.max(8, left), Math.max(8, maxLeft));
-      top = Math.min(Math.max(8, top), Math.max(8, maxTop));
-      el.style.left = left + "px";
-      el.style.top = top + "px";
-    }
-
-    function onDown(e) {
-      if (e.pointerType === "mouse" && e.button !== 0) return;
-      dragging = true; moved = false; pid = e.pointerId;
-      const r = el.getBoundingClientRect();
-      el.style.left = r.left + "px";
-      el.style.top = r.top + "px";
-      el.style.right = "auto";
-      el.style.bottom = "auto";
-      startX = e.clientX; startY = e.clientY;
-      origLeft = r.left; origTop = r.top;
-      handle.setPointerCapture(pid);
-      handle.addEventListener("pointermove", onMove);
-      handle.addEventListener("pointerup", onUp);
-      handle.addEventListener("pointercancel", onUp);
-    }
-
-    function onMove(e) {
-      if (!dragging || e.pointerId !== pid) return;
-      const dx = e.clientX - startX, dy = e.clientY - startY;
-      if (!moved && (Math.abs(dx) > 6 || Math.abs(dy) > 6)) moved = true;
-      el.style.left = (origLeft + dx) + "px";
-      el.style.top = (origTop + dy) + "px";
-      clamp();
-      updateEdgeState();
-    }
-
-    function onUp(e) {
-      if (e.pointerId !== pid) return;
-      dragging = false;
-      handle.removeEventListener("pointermove", onMove);
-      handle.removeEventListener("pointerup", onUp);
-      handle.removeEventListener("pointercancel", onUp);
-      if (moved) {
-        // Echtes Ziehen: den nachfolgenden nativen Klick einmalig unterdrücken
-        const suppressClick = (ce) => { ce.stopPropagation(); ce.preventDefault(); handle.removeEventListener("click", suppressClick, true); };
-        handle.addEventListener("click", suppressClick, true);
-      }
-    }
-
-    handle.style.touchAction = "none";
-    handle.addEventListener("pointerdown", onDown);
-    window.addEventListener("resize", () => { if (el.style.left) clamp(); updateEdgeState(); });
-    updateEdgeState(); // Ausgangszustand prüfen (Standardposition liegt am rechten Rand -> rund)
-  }
-
-  const faqBtnEl = document.getElementById("faq-bot-btn");
-  const faqWinEl = document.getElementById("faq-bot-window");
-  const faqHeaderEl = document.getElementById("faq-bot-header");
-
-  makeDraggable(faqBtnEl, faqBtnEl, "fb-dragging");
-  makeDraggable(faqWinEl, faqHeaderEl);
-</script>
 
 <script>
   const FAQ_WORKER_URL = "https://faq-bot.vincent-hahn.workers.dev";
