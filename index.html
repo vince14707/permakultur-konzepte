@@ -72,7 +72,7 @@
       "@type": "Course",
       "position": 1,
       "name": "Einführungskurs Permakultur-Design",
-      "description": "Grundprinzipien, Zonierung, Wasser- und Bodenmanagement anhand echter Flächenbeispiele. Für Einsteiger ohne Vorwissen.",
+      "description": "Grundprinzipien, Zonierung, Wasser- und Bodenmanagement anhand praxisnaher Beispiele. Für Einsteiger ohne Vorwissen.",
       "provider": {
         "@type": "Person",
         "name": "Vincent Hahn",
@@ -716,7 +716,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:12px;padding:2rem 1.6rem;display:flex;flex-direction:column;box-shadow:0 2px 16px rgba(28,74,42,0.05);">
         <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.13em;color:var(--green);font-weight:600;margin-bottom:0.6rem;">Für Einsteiger</div>
         <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--text);margin-bottom:0.8rem;line-height:1.3;">Einführungskurs Permakultur-Design</div>
-        <div style="font-size:0.85rem;color:var(--text-light);line-height:1.7;font-weight:300;flex:1;">Grundprinzipien, Zonierung, Wasser- und Bodenmanagement anhand echter Flächenbeispiele. Für alle, die verstehen wollen, wie permakulturelles Denken funktioniert – ohne Vorwissen.</div>
+        <div style="font-size:0.85rem;color:var(--text-light);line-height:1.7;font-weight:300;flex:1;">Grundprinzipien, Zonierung, Wasser- und Bodenmanagement anhand praxisnaher Beispiele. Für alle, die verstehen wollen, wie permakulturelles Denken funktioniert – ohne Vorwissen.</div>
       </div>
 
       <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:12px;padding:2rem 1.6rem;display:flex;flex-direction:column;box-shadow:0 2px 16px rgba(28,74,42,0.05);">
@@ -737,33 +737,59 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
   <div style="max-width:720px;margin:0 auto;padding:3rem 2rem 5rem;">
     <div style="text-align:center;margin-bottom:2rem;">
       <h2 style="font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--text);margin-bottom:0.6rem;">Nächste Termine</h2>
-      <p style="font-size:0.9rem;color:var(--text-light);line-height:1.7;max-width:420px;margin:0 auto;">Einführungsvortrag Permakultur – Grundlagen, Zonierung, Wasser- und Bodenmanagement anhand echter Flächenbeispiele.</p>
+      <p style="font-size:0.9rem;color:var(--text-light);line-height:1.7;max-width:420px;margin:0 auto;">Alle Termine nach Verfügbarkeit – bei Interesse einfach anmelden, Details klären wir im Anschluss.</p>
     </div>
+
+    <div style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--green);font-weight:600;margin:0 auto 0.8rem;max-width:480px;">Einführungsvortrag</div>
     <div style="display:flex;flex-direction:column;gap:0.9rem;max-width:480px;margin:0 auto;">
-      <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:10px;padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 12px rgba(28,74,42,0.05);">
+      <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:10px;padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;box-shadow:0 2px 12px rgba(28,74,42,0.05);">
         <span style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--text);">18. August 2026</span>
-        <span style="font-size:0.75rem;color:var(--green);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">Einführungsvortrag</span>
+        <button class="btn-g" onclick="show('analyse')">Anmelden →</button>
       </div>
-      <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:10px;padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 12px rgba(28,74,42,0.05);">
+      <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:10px;padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;box-shadow:0 2px 12px rgba(28,74,42,0.05);">
         <span style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--text);">15. September 2026</span>
-        <span style="font-size:0.75rem;color:var(--green);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">Einführungsvortrag</span>
+        <button class="btn-g" onclick="show('analyse')">Anmelden →</button>
       </div>
-      <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:10px;padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 12px rgba(28,74,42,0.05);">
+      <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:10px;padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;box-shadow:0 2px 12px rgba(28,74,42,0.05);">
         <span style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--text);">27. Oktober 2026</span>
-        <span style="font-size:0.75rem;color:var(--green);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">Einführungsvortrag</span>
+        <button class="btn-g" onclick="show('analyse')">Anmelden →</button>
       </div>
-      <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:10px;padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 12px rgba(28,74,42,0.05);">
+      <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:10px;padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;box-shadow:0 2px 12px rgba(28,74,42,0.05);">
         <span style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--text);">12. November 2026</span>
-        <span style="font-size:0.75rem;color:var(--green);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">Einführungsvortrag</span>
+        <button class="btn-g" onclick="show('analyse')">Anmelden →</button>
       </div>
-      <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:10px;padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;box-shadow:0 2px 12px rgba(28,74,42,0.05);">
+      <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:10px;padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;box-shadow:0 2px 12px rgba(28,74,42,0.05);">
         <span style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--text);">3. Dezember 2026</span>
-        <span style="font-size:0.75rem;color:var(--green);font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">Einführungsvortrag</span>
+        <button class="btn-g" onclick="show('analyse')">Anmelden →</button>
       </div>
     </div>
-    <div style="text-align:center;margin-top:2rem;">
-      <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:1rem;">Planungskurse und praktische Workshops werden fortlaufend ergänzt.</p>
-      <button class="btn-a" onclick="show('analyse')">Interesse melden →</button>
+
+    <div style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--green);font-weight:600;margin:2rem auto 0.8rem;max-width:480px;">Planungskurs</div>
+    <div style="display:flex;flex-direction:column;gap:0.9rem;max-width:480px;margin:0 auto;">
+      <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:10px;padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;box-shadow:0 2px 12px rgba(28,74,42,0.05);">
+        <span style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--text);">26. September 2026</span>
+        <button class="btn-g" onclick="show('analyse')">Anmelden →</button>
+      </div>
+      <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:10px;padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;box-shadow:0 2px 12px rgba(28,74,42,0.05);">
+        <span style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--text);">14. November 2026</span>
+        <button class="btn-g" onclick="show('analyse')">Anmelden →</button>
+      </div>
+    </div>
+
+    <div style="font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--green);font-weight:600;margin:2rem auto 0.8rem;max-width:480px;">Praxis-Workshop</div>
+    <div style="display:flex;flex-direction:column;gap:0.9rem;max-width:480px;margin:0 auto;">
+      <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:10px;padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;box-shadow:0 2px 12px rgba(28,74,42,0.05);">
+        <span style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--text);">10. Oktober 2026</span>
+        <button class="btn-g" onclick="show('analyse')">Anmelden →</button>
+      </div>
+      <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:10px;padding:1.1rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;box-shadow:0 2px 12px rgba(28,74,42,0.05);">
+        <span style="font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--text);">5. Dezember 2026</span>
+        <button class="btn-g" onclick="show('analyse')">Anmelden →</button>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:2.5rem;">
+      <p style="font-size:0.78rem;color:var(--text-light);">Termine nach Verfügbarkeit, Anpassungen vorbehalten.</p>
     </div>
   </div>
 </div>
@@ -1442,7 +1468,7 @@ function downloadPDF(){
   #faq-bot-send:disabled { background: #aaa; cursor: not-allowed; }
 </style>
 
-<button id="faq-bot-btn">
+<button id="faq-bot-btn" onclick="faqBotToggle()">
   💬 Frage stellen
 </button>
 
@@ -1464,11 +1490,12 @@ function downloadPDF(){
 
 <script>
   // --- Verschiebbarkeit: Button (geschlossen) & Fenster (per Header, geöffnet) ---
-  function makeDraggable(el, handle, opts) {
-    opts = opts || {};
-    let dragging = false, moved = false, startX, startY, origLeft, origTop;
+  // Nutzt Pointer Events (vereinheitlicht Maus/Touch) und lässt den nativen
+  // Klick unangetastet – nur nach einem echten Ziehen wird der Klick unterdrückt.
+  function makeDraggable(el, handle) {
+    let dragging = false, moved = false, startX, startY, origLeft, origTop, pid = null;
 
-    function clamp(el) {
+    function clamp() {
       const r = el.getBoundingClientRect();
       const maxLeft = window.innerWidth - r.width - 8;
       const maxTop = window.innerHeight - r.height - 8;
@@ -1481,53 +1508,54 @@ function downloadPDF(){
     }
 
     function onDown(e) {
-      dragging = true; moved = false;
-      const p = e.touches ? e.touches[0] : e;
+      if (e.pointerType === "mouse" && e.button !== 0) return;
+      dragging = true; moved = false; pid = e.pointerId;
       const r = el.getBoundingClientRect();
-      // Switch from right/bottom-based to left/top-based positioning on first drag
       el.style.left = r.left + "px";
       el.style.top = r.top + "px";
       el.style.right = "auto";
       el.style.bottom = "auto";
-      startX = p.clientX; startY = p.clientY;
+      startX = e.clientX; startY = e.clientY;
       origLeft = r.left; origTop = r.top;
-      document.addEventListener("mousemove", onMove);
-      document.addEventListener("mouseup", onUp);
-      document.addEventListener("touchmove", onMove, {passive:false});
-      document.addEventListener("touchend", onUp);
+      handle.setPointerCapture(pid);
+      handle.addEventListener("pointermove", onMove);
+      handle.addEventListener("pointerup", onUp);
+      handle.addEventListener("pointercancel", onUp);
     }
 
     function onMove(e) {
-      if (!dragging) return;
-      const p = e.touches ? e.touches[0] : e;
-      const dx = p.clientX - startX, dy = p.clientY - startY;
-      if (Math.abs(dx) > 4 || Math.abs(dy) > 4) moved = true;
-      if (moved && e.cancelable) e.preventDefault();
+      if (!dragging || e.pointerId !== pid) return;
+      const dx = e.clientX - startX, dy = e.clientY - startY;
+      if (Math.abs(dx) > 6 || Math.abs(dy) > 6) moved = true;
       el.style.left = (origLeft + dx) + "px";
       el.style.top = (origTop + dy) + "px";
-      clamp(el);
+      clamp();
     }
 
     function onUp(e) {
+      if (e.pointerId !== pid) return;
       dragging = false;
-      document.removeEventListener("mousemove", onMove);
-      document.removeEventListener("mouseup", onUp);
-      document.removeEventListener("touchmove", onMove);
-      document.removeEventListener("touchend", onUp);
-      if (!moved && opts.onClick) opts.onClick();
+      handle.removeEventListener("pointermove", onMove);
+      handle.removeEventListener("pointerup", onUp);
+      handle.removeEventListener("pointercancel", onUp);
+      if (moved) {
+        // Echtes Ziehen: den nachfolgenden nativen Klick einmalig unterdrücken
+        const suppressClick = (ce) => { ce.stopPropagation(); ce.preventDefault(); handle.removeEventListener("click", suppressClick, true); };
+        handle.addEventListener("click", suppressClick, true);
+      }
     }
 
-    handle.addEventListener("mousedown", onDown);
-    handle.addEventListener("touchstart", onDown, {passive:true});
-    window.addEventListener("resize", () => { if (el.style.left) clamp(el); });
+    handle.style.touchAction = "none";
+    handle.addEventListener("pointerdown", onDown);
+    window.addEventListener("resize", () => { if (el.style.left) clamp(); });
   }
 
   const faqBtnEl = document.getElementById("faq-bot-btn");
   const faqWinEl = document.getElementById("faq-bot-window");
   const faqHeaderEl = document.getElementById("faq-bot-header");
 
-  makeDraggable(faqBtnEl, faqBtnEl, { onClick: () => faqBotToggle() });
-  makeDraggable(faqWinEl, faqHeaderEl, {});
+  makeDraggable(faqBtnEl, faqBtnEl);
+  makeDraggable(faqWinEl, faqHeaderEl);
 </script>
 
 <script>
