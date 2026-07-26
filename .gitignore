@@ -1,1 +1,5 @@
 **/.DS_Store
+
+# Rechnungs-Tool: echte Adress-/Bankdaten nie committen
+tools/rechnung/config.local.js
+tools/rechnung/output/
