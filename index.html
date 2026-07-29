@@ -444,7 +444,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
           <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--text);margin-bottom:0.8rem;line-height:1.3;">Vom Konzept zur fertigen Fläche</div>
           <div style="font-size:0.8rem;color:var(--text-light);line-height:1.7;font-weight:300;flex:1;">Bestandsaufnahme, Konzept, Umsetzung – erzähl mir was du vorhast, wir klären den nächsten Schritt im Gespräch.</div>
           <div style="font-size:0.82rem;color:var(--green);font-weight:500;margin-top:1rem;">Auf Anfrage</div>
-          <button onclick="show('analyse')" style="margin-top:1.2rem;display:inline-block;font-size:0.78rem;font-weight:500;font-family:'Jost',sans-serif;padding:0.55rem 1.2rem;border-radius:30px;border:1.5px solid var(--green);color:var(--green);background:transparent;cursor:pointer;transition:all 0.18s;text-align:center;" onmouseover="this.style.background='var(--green)';this.style.color='white';" onmouseout="this.style.background='transparent';this.style.color='var(--green)';">Anfrage stellen →</button>
+          <button onclick="show('analyse','planung')" style="margin-top:1.2rem;display:inline-block;font-size:0.78rem;font-weight:500;font-family:'Jost',sans-serif;padding:0.55rem 1.2rem;border-radius:30px;border:1.5px solid var(--green);color:var(--green);background:transparent;cursor:pointer;transition:all 0.18s;text-align:center;" onmouseover="this.style.background='var(--green)';this.style.color='white';" onmouseout="this.style.background='transparent';this.style.color='var(--green)';">Anfrage stellen →</button>
         </div>
 
         <!-- Karte 2 (hervorgehoben) -->
@@ -504,6 +504,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
     </div>
     <div class="lc">
       <p>Beratung zu ökologischem Gartenbau, <a href="/blog/naturnaher-garten-artenvielfalt/" style="color:var(--green);">Biotopanlage</a>, Pflanzung und Pflege – einzeln buchbar (1, 2 oder mehr Stunden) oder als laufende Begleitung über einen längeren Zeitraum. Unsicher, was passt? Ein kostenloses Erstgespräch (bis zu 30 Min.) klärt die Richtung; für eine strukturierte Bestandsanalyse deiner Fläche gibt's auf Wunsch ein eigenes Analyse-Paket.</p>
+      <button class="btn-sm" onclick="show('analyse','beratung')" style="margin-top:1.2rem;">Anfrage stellen →</button>
     </div>
   </div>
 
@@ -521,7 +522,10 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
     </div>
     <div class="lc">
       <p><a href="/blog/waldgarten-planen/" style="color:var(--green);">Handgezeichnetes Permakultur-Konzept</a> mit Pflanzliste und Planbeschreibung – individuell auf dich und deine <a href="/blog/mehrjaehrige-strukturen-permakultur/" style="color:var(--green);">Fläche</a> zugeschnitten.</p>
-      <button class="btn-sm" onclick="openGallery('planung')" style="margin-top:1.2rem;">Projektbilder ansehen →</button>
+      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:1.2rem;">
+        <button class="btn-sm" onclick="openGallery('planung')">Projektbilder ansehen →</button>
+        <button class="btn-sm" onclick="show('analyse','planung')">Anfrage stellen →</button>
+      </div>
     </div>
   </div>
 
@@ -539,7 +543,10 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
     </div>
     <div class="lc">
       <p>Umsetzung auf Basis gemeinsam entwickelter Planungen – von Bepflanzung bis komplexem <a href="/blog/wasserrueckhaltung-hanggrundstueck/" style="color:var(--green);">Bauprojekt</a>. Die Umsetzung erfolgt in Kooperation mit einem erfahrenen Spezial-Team.</p>
-      <button class="btn-sm" onclick="openGallery('umsetzung')" style="margin-top:1.2rem;">Projektbilder ansehen →</button>
+      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:1.2rem;">
+        <button class="btn-sm" onclick="openGallery('umsetzung')">Projektbilder ansehen →</button>
+        <button class="btn-sm" onclick="show('analyse','umsetzung')">Anfrage stellen →</button>
+      </div>
     </div>
   </div>
 
@@ -561,6 +568,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
         <div style="font-size:0.8rem;color:var(--text-mid);"><span style="color:var(--green);font-weight:500;">65 €/Std.</span> · Obstbaumschnitt</div>
         <div style="font-size:0.8rem;color:var(--text-mid);"><span style="color:var(--green);font-weight:500;">45 €/Std.</span> · Gehölz- &amp; Gartenpflege</div>
       </div>
+      <button class="btn-sm" onclick="show('analyse','pflege')" style="margin-top:1.2rem;">Anfrage stellen →</button>
     </div>
   </div>
 
@@ -783,7 +791,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 
     <div style="text-align:center;margin-top:2.5rem;">
       <p style="font-size:0.85rem;color:var(--text-light);margin-bottom:1rem;">Termine nach Verfügbarkeit, Anpassungen vorbehalten.</p>
-      <button class="btn-a" onclick="show('analyse')">Interesse melden →</button>
+      <button class="btn-a" onclick="show('analyse','kurs')">Interesse melden →</button>
     </div>
   </div>
 </div>
@@ -1081,7 +1089,7 @@ document.addEventListener('DOMContentLoaded',function(){
 });
 
 /* ===== NAVIGATION ===== */
-function show(p){
+function show(p, preselect){
   document.querySelectorAll('.page').forEach(function(el){el.classList.remove('active');});
   var el=document.getElementById('p-'+p);
   if(el){el.classList.add('active');}
@@ -1089,6 +1097,13 @@ function show(p){
   var nb=document.getElementById('n-'+p);
   if(nb){nb.classList.add('active');}
   window.scrollTo(0,0);
+  if(p === 'analyse' && preselect){
+    var sel = document.getElementById('kf-anliegen');
+    if(sel){
+      sel.value = preselect;
+      if(typeof updateFormFields === 'function'){ updateFormFields(); }
+    }
+  }
 }
 
 /* ===== GALERIE & LIGHTBOX ===== */
@@ -1320,11 +1335,19 @@ function downloadPDF(){
 // Direktlink von externen Seiten (z.B. Blog) zu einer bestimmten Sektion
 (function() {
   var validPages = ['home','leistungen','kurse','ueber','analyse'];
+  var validAnliegen = ['planung','umsetzung','beratung','schnitt','pflege','kurs','sonstiges'];
   var hash = window.location.hash.replace('#','');
   if (validPages.indexOf(hash) !== -1) {
     window.addEventListener('DOMContentLoaded', function() {
       show(hash);
     });
+  } else if (hash.indexOf('analyse-') === 0) {
+    var suffix = hash.slice('analyse-'.length);
+    if (validAnliegen.indexOf(suffix) !== -1) {
+      window.addEventListener('DOMContentLoaded', function() {
+        show('analyse', suffix);
+      });
+    }
   }
 })();
 </script>
