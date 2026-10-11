@@ -94,6 +94,7 @@ footer{background:var(--green);color:white;padding:2.5rem 3rem;display:flex;alig
 .ft-l a:hover{color:white;}
 .ft-r{font-size:0.75rem;color:rgba(255,255,255,0.4);text-align:right;line-height:1.6;}
 @media(max-width:900px){nav{padding:1rem 1.5rem;}.nav-sub{display:none;}.nav-links{gap:1rem;}.nl{font-size:0.75rem;}.article-hero{padding:3.5rem 1.5rem 3rem;}.article-wrap{padding:3rem 1.2rem 5rem;}footer{flex-direction:column;padding:2rem 1.5rem;text-align:center;}.ft-r{text-align:center;}}
+.hamburger{display:none;}.mobile-menu{display:none;}@media(max-width:900px){.nl:not(.cta):not(.hamburger){display:none;}.hamburger{display:flex !important;font-size:1.3rem;background:none;border:1px solid rgba(28,74,42,0.2);border-radius:6px;cursor:pointer;color:var(--text);padding:0.3rem 0.6rem;line-height:1;}.mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:white;border-bottom:2px solid rgba(28,74,42,0.1);z-index:200;flex-direction:column;padding:0.5rem 0;box-shadow:0 8px 24px rgba(0,0,0,0.1);}.mobile-menu.open{display:flex;}.mobile-menu a{display:block;padding:0.9rem 1.5rem;font-size:0.9rem;font-family:'Jost',sans-serif;color:var(--text);text-decoration:none;border-bottom:1px solid rgba(28,74,42,0.06);}.mobile-menu a:last-child{border-bottom:none;color:var(--green);font-weight:500;}.mobile-menu a:hover{background:var(--cream);}}@media(max-width:420px){.nav-brand{font-size:0.9rem;}.nl.cta{padding:0.5rem 0.8rem;font-size:0.72rem;white-space:nowrap;}.nav-logo img{height:40px !important;}}
 </style>
 </head>
 <body>
@@ -101,7 +102,7 @@ footer{background:var(--green);color:white;padding:2.5rem 3rem;display:flex;alig
 <nav>
   <div class="nav-inner">
     <a class="nav-logo" href="https://permakultur-konzepte.de">
-      <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_001.webp" style="height:48px;width:auto;display:block;" alt="Permakultur-Konzepte Logo">
+      <img width="97" height="96" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_001.webp" style="height:48px;width:auto;display:block;" alt="Permakultur-Konzepte Logo">
       <div>
         <div class="nav-brand">Permakultur-Blog</div>
         <div class="nav-sub">für regenerative Flächennutzung</div>
@@ -113,7 +114,16 @@ footer{background:var(--green);color:white;padding:2.5rem 3rem;display:flex;alig
       <a class="nl" href="https://permakultur-konzepte.de/#ueber">Über mich</a>
       <a class="nl" href="/blog/">Blog</a>
       <a class="nl cta" href="https://permakultur-konzepte.de/#analyse">Kontakt & Anfrage</a>
+      <button class="nl hamburger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu" onclick="var m=document.getElementById('mobileMenu');var o=m.classList.toggle('open');this.setAttribute('aria-expanded',o);">☰</button>
     </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="https://permakultur-konzepte.de/">Start</a>
+    <a href="https://permakultur-konzepte.de/#leistungen">Leistungen</a>
+    <a href="https://permakultur-konzepte.de/#kurse">Kurse &amp; Workshops</a>
+    <a href="https://permakultur-konzepte.de/#ueber">Über mich</a>
+    <a href="/blog/">Blog</a>
+    <a href="https://permakultur-konzepte.de/#analyse">Kontakt &amp; Anfrage</a>
   </div>
 </nav>
 
@@ -140,7 +150,7 @@ footer{background:var(--green);color:white;padding:2.5rem 3rem;display:flex;alig
   <div class="article-body">
 
     <figure style="margin:0 0 1.5rem;">
-      <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_019.webp" alt="Junge Streuobst- und Waldgarten-Anlage – Waldgarten planen in der Praxis" style="width:100%;border-radius:8px;display:block;">
+      <img width="1280" height="961" fetchpriority="high" decoding="async" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_019.webp" alt="Junge Streuobst- und Waldgarten-Anlage – Waldgarten planen in der Praxis" style="width:100%;height:auto;border-radius:8px;display:block;">
       <figcaption style="font-size:0.78rem;color:var(--text-light);font-style:italic;margin-top:0.5rem;text-align:center;">Erste Anlagephase eines Waldgartens: Gehölzstruktur und Wegeführung stehen bereits fest</figcaption>
     </figure>
 
@@ -155,7 +165,7 @@ footer{background:var(--green);color:white;padding:2.5rem 3rem;display:flex;alig
     <h2>Das Schichtprinzip verstehen – <em>ohne es zu übertreiben</em></h2>
     <p>In der Permakultur spricht man von Schichten im Waldgarten: Kronenschicht, Strauchschicht, Krautschicht, Bodendecker, Wurzelschicht, Kletterpflanzen. Das stimmt – aber in der Praxis musst du nicht alle sieben Schichten von Tag eins an vollständig bespielen. Wichtiger ist, dass du verstehst wie sie zusammenwirken.</p>
     <figure style="margin:1.5rem 0;">
-      <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_014.webp" alt="Nuss- und Obstgarten-Planung im Hunsrück – mehrschichtiger Waldgarten in Entstehung" style="width:100%;border-radius:8px;display:block;">
+      <img width="2496" height="968" loading="lazy" decoding="async" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_014.webp" alt="Nuss- und Obstgarten-Planung im Hunsrück – mehrschichtiger Waldgarten in Entstehung" style="width:100%;height:auto;border-radius:8px;display:block;">
       <figcaption style="font-size:0.78rem;color:var(--text-light);font-style:italic;margin-top:0.5rem;text-align:center;">Konkrete Waldgarten-Planung im Hunsrück: Kronen-, Strauch- und Krautschicht von Anfang an mitgedacht</figcaption>
     </figure>
 
