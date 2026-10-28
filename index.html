@@ -241,6 +241,10 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 .fl-p.opt i{background:transparent;border:1.5px dashed var(--green);color:var(--green);}
 .fl-p small{font-family:'Jost',sans-serif;font-size:0.7rem;color:var(--text-light);}
 .fl-a{color:var(--amber);}
+.fl-go{border:none;cursor:pointer;background:var(--amber);color:white;padding:0.45rem 1.1rem 0.45rem 0.45rem;border-radius:30px;box-shadow:0 2px 12px rgba(201,146,26,0.3);transition:background 0.18s;}
+.fl-go:hover{background:var(--amber-light);}
+.fl-go i{background:white;color:var(--amber);}
+.fl-go small{color:rgba(255,255,255,0.85);}
 .fl-ini{margin-top:1rem;font-size:0.88rem;color:var(--text-mid);font-weight:300;}
 .fl-ini button{background:none;border:none;padding:0;font:inherit;color:var(--green);font-weight:500;cursor:pointer;}
 .l-num{position:absolute;top:-0.1rem;right:1.2rem;font-family:'Playfair Display',serif;font-size:7rem;font-weight:700;line-height:1;color:rgba(255,255,255,0.1);z-index:1;pointer-events:none;letter-spacing:-0.04em;}
@@ -523,11 +527,11 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
   <!-- Ablauf -->
   <div class="fl" id="ablauf">
     <div class="fl-row">
-      <span class="fl-p"><i>1</i>Bestandsaufnahme</span><span class="fl-a">→</span>
-      <span class="fl-p"><i>2</i>Konzept</span><span class="fl-a">→</span>
+      <button class="fl-p fl-go" data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'><i>1</i>Kostenloses Erstgespräch <small>30 Min.</small></button><span class="fl-a">→</span>
+      <span class="fl-p"><i>2</i>Planung</span><span class="fl-a">→</span>
       <span class="fl-p opt"><i>3</i>Umsetzung <small>optional</small></span>
     </div>
-    <p class="fl-ini">Einstieg an jeder Stelle möglich – auch nur Beratung oder nur Umsetzung. Unsicher? <button data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Kostenloses Erstgespräch →</button></p>
+    <p class="fl-ini">Beratung und Pflege sind auch einzeln buchbar.</p>
   </div>
 
   <div class="lb">
@@ -536,13 +540,13 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_002.webp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;opacity:0.35;mix-blend-mode:luminosity;" alt="">
       <div class="l-meta-overlay" style="background:rgba(28,60,18,0.65);"></div>
       <div class="l-meta-content">
-        <div class="l-category">Planung</div>
+        <div class="l-category">Schritt 2 · Planung</div>
         <div class="l-ti">Permakultur-Konzept</div>
         <div class="l-pr">Auf Anfrage</div>
       </div>
     </div>
     <div class="lc">
-      <p>Bestandsaufnahme deiner Fläche – aus der Ferne oder vor Ort – und daraus ein <a href="/blog/waldgarten-planen/" style="color:var(--green);">handgezeichnetes Permakultur-Konzept</a> mit Pflanzliste und Planbeschreibung – individuell auf dich und deine <a href="/blog/mehrjaehrige-strukturen-permakultur/" style="color:var(--green);">Fläche</a> zugeschnitten.</p>
+      <p>Bestandsaufnahme deines Projekts mit anschließendem <a href="/blog/waldgarten-planen/" style="color:var(--green);">handgezeichnetem Entwurfsplan</a> und Planbeschreibung. Bei Bedarf auch mit Detailzeichnungen, Schnitten und Pflanzplänen.</p>
       <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:1.2rem;">
         <button class="btn-sm" onclick="openGallery('planung')">Projektbilder ansehen →</button>
         <button class="btn-sm" onclick="show('analyse','planung')">Anfrage stellen →</button>
@@ -556,13 +560,13 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_012.webp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:75% 20%;z-index:0;opacity:0.35;mix-blend-mode:luminosity;" alt="">
       <div class="l-meta-overlay" style="background:rgba(40,28,10,0.65);"></div>
       <div class="l-meta-content">
-        <div class="l-category">Umsetzung</div>
+        <div class="l-category">Schritt 3 · Umsetzung</div>
         <div class="l-ti">Bau &amp; Umsetzung</div>
         <div class="l-pr">Auf Anfrage</div>
       </div>
     </div>
     <div class="lc">
-      <p>Umsetzung unserer Planung oder deiner eigenen, die wir vorher gemeinsam durchgehen – von Bepflanzung bis komplexem <a href="/blog/wasserrueckhaltung-hanggrundstueck/" style="color:var(--green);">Bauprojekt</a>. Die Umsetzung erfolgt in Kooperation mit einem erfahrenen Spezial-Team.</p>
+      <p>Umsetzung unserer Planung oder deiner eigenen, die wir vorher gemeinsam durchgehen – von Bepflanzung bis komplexem <a href="/blog/wasserrueckhaltung-hanggrundstueck/" style="color:var(--green);">Bauprojekt</a>. Die Umsetzung erfolgt in Kooperation mit einem erfahrenen Experten-Team.</p>
       <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:1.2rem;">
         <button class="btn-sm" onclick="openGallery('umsetzung')">Projektbilder ansehen →</button>
         <button class="btn-sm" onclick="show('analyse','umsetzung')">Anfrage stellen →</button>
@@ -575,13 +579,13 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       <div class="l-meta-bg" style="background:var(--green);"></div>
       <div class="l-meta-overlay"></div>
       <div class="l-meta-content">
-        <div class="l-category">Beratung</div>
+        <div class="l-category">Auch einzeln · Beratung</div>
         <div class="l-ti">Beratung</div>
         <div class="l-pr">95 €/Std.</div>
       </div>
     </div>
     <div class="lc">
-      <p>Konkrete Frage zu ökologischem Gartenbau, <a href="/blog/naturnaher-garten-artenvielfalt/" style="color:var(--green);">Biotopanlage</a>, Pflanzung oder Pflege? Einzeln buchbar (1, 2 oder mehr Stunden) – oder als laufende Begleitung über einen längeren Zeitraum.</p>
+      <p>Konkrete Fragen, z. B. zu Teichbau, <a href="/blog/naturnaher-garten-artenvielfalt/" style="color:var(--green);">Biotopanlage</a>, Pflanzung oder Pflege? Einzelne Stunden zum Stundensatz – oder als Begleitung über einen längeren Zeitraum zu günstigeren Konditionen.</p>
       <button class="btn-sm" onclick="show('analyse','beratung')" style="margin-top:1.2rem;">Anfrage stellen →</button>
     </div>
   </div>
@@ -591,7 +595,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       <div class="l-meta-bg" style="background:#1a3a1a;"></div>
       <div class="l-meta-overlay"></div>
       <div class="l-meta-content">
-        <div class="l-category">Pflege</div>
+        <div class="l-category">Auch einzeln · Pflege</div>
         <div class="l-ti">Pflege &amp; Schnitt</div>
         <div class="l-pr">45–65 €/Std.</div>
         <div class="l-nt">LK Weilheim-Schongau · Landsberg a.Lech · Ostallgäu · Garmisch-Partenkirchen</div>
