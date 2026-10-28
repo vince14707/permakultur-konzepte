@@ -247,6 +247,15 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 .fl-go small{color:rgba(255,255,255,0.85);}
 .fl-ini{margin-top:1rem;font-size:0.88rem;color:var(--text-mid);font-weight:300;}
 .fl-ini button{background:none;border:none;padding:0;font:inherit;color:var(--green);font-weight:500;cursor:pointer;}
+.l-more{margin-top:1rem;font-size:0.85rem;color:var(--text-mid);}
+.l-more summary{cursor:pointer;color:var(--green);font-weight:500;list-style:none;}
+.l-more summary::-webkit-details-marker{display:none;}
+.l-more summary::after{content:' ↓';}
+.l-more[open] summary::after{content:' ↑';}
+.l-more p{margin:0.7rem 0 0.5rem;font-weight:300;line-height:1.7;}
+.l-more ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;max-width:220px;}
+.l-more li{display:flex;justify-content:space-between;border-bottom:1px dashed rgba(28,74,42,0.15);padding-bottom:0.3rem;}
+.l-more b{color:var(--green);font-weight:500;}
 .l-num{position:absolute;top:-0.1rem;right:1.2rem;font-family:'Playfair Display',serif;font-size:7rem;font-weight:700;line-height:1;color:rgba(255,255,255,0.1);z-index:1;pointer-events:none;letter-spacing:-0.04em;}
 .lc{padding:0 0 0 2.5rem;}
 .lc p{font-size:0.92rem;color:var(--text-mid);line-height:1.85;font-weight:300;margin-bottom:1rem;}
@@ -586,6 +595,15 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
     </div>
     <div class="lc">
       <p>Konkrete Fragen, z. B. zu Teichbau, <a href="/blog/naturnaher-garten-artenvielfalt/" style="color:var(--green);">Biotopanlage</a>, Pflanzung oder Pflege? Einzelne Stunden zum Stundensatz – oder als Begleitung über einen längeren Zeitraum zu günstigeren Konditionen.</p>
+      <details class="l-more">
+        <summary>Mehr zur Begleitung</summary>
+        <p>Stundenpakete für eine Begleitung über einen längeren Zeitraum – günstiger als einzelne Stunden:</p>
+        <ul>
+          <li><span>4 Std.</span><b>300 €</b></li>
+          <li><span>6 Std.</span><b>400 €</b></li>
+          <li><span>8 Std.</span><b>500 €</b></li>
+        </ul>
+      </details>
       <button class="btn-sm" onclick="show('analyse','beratung')" style="margin-top:1.2rem;">Anfrage stellen →</button>
     </div>
   </div>
