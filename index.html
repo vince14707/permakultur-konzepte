@@ -251,6 +251,9 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 .ws-pri{background:var(--amber);color:white;border:none;padding:0.65rem 1.4rem;border-radius:30px;font-family:'Jost',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;box-shadow:0 2px 12px rgba(201,146,26,0.25);transition:background 0.18s;}
 .ws-pri:hover{background:var(--amber-light);}
 .ws-lnk{background:none;border:none;padding:0;margin-top:1rem;font-family:'Jost',sans-serif;font-size:0.82rem;font-weight:600;color:var(--green);cursor:pointer;text-decoration:none;}
+.ws-out{border:1.5px solid var(--green);border-radius:30px;padding:0.5rem 1.1rem;font-weight:500;transition:all 0.18s;}
+.ws-out:hover{background:var(--green);color:white;}
+.ws-note{font-size:0.75rem;color:var(--text-light);line-height:1.6;margin-top:0.9rem;font-weight:300;}
 .ws-act .ws-lnk{margin-top:0;font-weight:500;}
 .fl{padding:0 3rem 2.5rem;max-width:1100px;margin:0 auto;}
 .fl-row{display:flex;flex-wrap:wrap;align-items:center;gap:0.6rem 0.9rem;}
@@ -509,16 +512,17 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
             <button class="ws-pri" data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Kostenloses Erstgespräch →</button>
             <button class="ws-lnk" onclick="show('leistungen')">Leistungen im Detail →</button>
           </div>
+          <div class="ws-note">Im Erstgespräch lernen wir uns kennen, besprechen kurz dein Vorhaben und klären den passenden nächsten Schritt. Eine fachliche Beratung ist darin nicht enthalten.</div>
         </div>
         <div class="ws-c">
           <div class="ws-q">Ich habe eine konkrete Frage.</div>
           <div class="ws-s">Beratung zu Teichbau, Biotopanlage, Pflanzung oder permakulturellen Vorgehensweisen – flexibel buchbar, abgerechnet nach tatsächlicher Dauer.</div>
-          <button class="ws-lnk" data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Beratung · 95 €/Std. →</button>
+          <button class="ws-lnk ws-out" data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Beratungstermin buchen →</button>
         </div>
         <div class="ws-c">
           <div class="ws-q">Mein Garten braucht Pflege oder Schnitt.</div>
-          <div class="ws-s">Obstbaumschnitt, Gehölz- und Gartenpflege in Oberbayern &amp; Allgäu – einfach anrufen.</div>
-          <a class="ws-lnk" href="tel:+4917620538550">Pflege &amp; Schnitt · 45–65 €/Std. →</a>
+          <div class="ws-s">Obstbaumschnitt, Gehölz- und Gartenpflege in Oberbayern &amp; Allgäu.</div>
+          <a class="ws-lnk ws-out" href="tel:+4917620538550">Anrufen →</a>
         </div>
       </div>
     </div>
@@ -633,7 +637,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
     <button class="btn-a" onclick="openGallery()" style="background:white;color:var(--green);font-weight:600;margin-bottom:1rem;">Galerie öffnen →</button>
     <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.2);">
       <h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:white;margin-bottom:0.5rem;">Kostenloses <em style="font-style:italic;color:var(--amber-light);">Erstgespräch</em></h2>
-      <p style="color:rgba(255,255,255,0.7);font-size:0.9rem;font-weight:300;margin-bottom:1.5rem;">Bis zu 30 Minuten, unverbindlich. Einfach anrufen oder Termin buchen.</p>
+      <p style="color:rgba(255,255,255,0.7);font-size:0.9rem;font-weight:300;margin-bottom:1.5rem;">Bis zu 30 Minuten, unverbindlich: Kennenlernen, Vorhaben besprechen, nächsten Schritt klären. Einfach anrufen oder Termin buchen.</p>
       <div style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;">
         <a class="btn-a" href="tel:+4917620538550" style="text-decoration:none;">Anrufen: 0176 20538550</a>
         <button class="btn-a" data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' style="background:transparent;border:1.5px solid var(--amber-light);color:var(--amber-light);box-shadow:none;">Termin buchen →</button>
