@@ -234,20 +234,14 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 .cal-placeholder{background:var(--cream-dark);border:2px dashed rgba(28,74,42,0.2);border-radius:12px;padding:3rem 2rem;text-align:center;margin-top:3rem;}
 .cal-placeholder h2{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--text);margin-bottom:0.6rem;}
 .cal-placeholder p{font-size:0.88rem;color:var(--text-light);line-height:1.7;max-width:420px;margin:0 auto;}
-.fl{padding:0 3rem 3.5rem;max-width:1100px;margin:0 auto;}
-.fl-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2.2rem;}
-.fl-st{background:white;border:1px solid rgba(28,74,42,0.1);border-radius:12px;padding:1.6rem 1.5rem;position:relative;box-shadow:0 2px 16px rgba(28,74,42,0.05);}
-.fl-st:not(:last-child)::after{content:'→';position:absolute;right:-1.65rem;top:50%;transform:translateY(-50%);color:var(--amber);font-size:1.2rem;}
-.fl-n{width:38px;height:38px;border-radius:50%;background:var(--green);color:white;font-family:'Playfair Display',serif;font-size:1.05rem;display:flex;align-items:center;justify-content:center;margin-bottom:0.9rem;}
-.fl-st.opt .fl-n{background:transparent;border:1.5px dashed var(--green);color:var(--green);}
-.fl-t{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--text);margin-bottom:0.5rem;line-height:1.3;}
-.fl-t small{font-family:'Jost',sans-serif;font-size:0.7rem;color:var(--text-light);font-weight:400;margin-left:0.3rem;}
-.fl-d{font-size:0.85rem;color:var(--text-mid);line-height:1.7;font-weight:300;}
-.fl-alt{margin-top:1.8rem;display:flex;flex-wrap:wrap;align-items:center;gap:0.7rem;font-size:0.85rem;color:var(--text-mid);}
-.fl-alt button{font-family:'Jost',sans-serif;font-size:0.8rem;padding:0.5rem 1.1rem;border-radius:30px;border:1.5px solid rgba(28,74,42,0.25);background:transparent;color:var(--green);cursor:pointer;transition:all 0.18s;}
-.fl-alt button:hover{border-color:var(--green);background:var(--green);color:white;}
-.fl-alt button b{font-weight:600;}
-.fl-ini{margin-top:1rem;font-size:0.85rem;color:var(--text-mid);}
+.fl{padding:0 3rem 2.5rem;max-width:1100px;margin:0 auto;}
+.fl-row{display:flex;flex-wrap:wrap;align-items:center;gap:0.6rem 0.9rem;}
+.fl-p{display:inline-flex;align-items:center;gap:0.55rem;font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--text);}
+.fl-p i{font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--green);color:white;font-size:0.9rem;display:inline-flex;align-items:center;justify-content:center;}
+.fl-p.opt i{background:transparent;border:1.5px dashed var(--green);color:var(--green);}
+.fl-p small{font-family:'Jost',sans-serif;font-size:0.7rem;color:var(--text-light);}
+.fl-a{color:var(--amber);}
+.fl-ini{margin-top:1rem;font-size:0.88rem;color:var(--text-mid);font-weight:300;}
 .fl-ini button{background:none;border:none;padding:0;font:inherit;color:var(--green);font-weight:500;cursor:pointer;}
 .l-num{position:absolute;top:-0.1rem;right:1.2rem;font-family:'Playfair Display',serif;font-size:7rem;font-weight:700;line-height:1;color:rgba(255,255,255,0.1);z-index:1;pointer-events:none;letter-spacing:-0.04em;}
 .lc{padding:0 0 0 2.5rem;}
@@ -346,8 +340,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 @media(max-width:900px){
   .lb,.an-in,.ab-gr,.kt-gr{grid-template-columns:1fr;}
   .fl{padding-left:1.5rem;padding-right:1.5rem;}
-  .fl-steps{grid-template-columns:1fr;gap:2rem;}
-  .fl-st:not(:last-child)::after{content:'↓';right:auto;left:50%;top:auto;bottom:-1.6rem;transform:translateX(-50%);}
   .lc{padding:1.5rem 0 0;}
   .kf-row{grid-template-columns:1fr;}
   .steps-row{grid-template-columns:1fr 1fr;}
@@ -526,51 +518,16 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       <h2 style="margin-bottom:0;">Was ich<br><em style="font-style:italic;color:var(--green);">anbiete</em></h2>
       <button class="btn-a" onclick="openGallery()" style="flex-shrink:0;margin-top:0.5rem;">Projektbilder ansehen →</button>
     </div>
-    <p style="margin-top:1rem;">Von der ersten Idee bis zur fertigen Fläche – je nachdem, wo du gerade stehst, steigst du an der passenden Stelle ein.</p>
   </div>
 
   <!-- Ablauf -->
   <div class="fl" id="ablauf">
-    <div class="eyebrow">So läuft's ab</div>
-    <div class="fl-steps">
-      <div class="fl-st">
-        <div class="fl-n">1</div>
-        <div class="fl-t">Bestandsaufnahme</div>
-        <div class="fl-d">Wir klären dein Vorhaben und was deine Fläche mitbringt – aus der Ferne über Fotos, Pläne und Infos oder bei einem Termin vor Ort.</div>
-      </div>
-      <div class="fl-st">
-        <div class="fl-n">2</div>
-        <div class="fl-t">Konzept oder Beratung</div>
-        <div class="fl-d">Meist ein handgezeichneter Entwurfsplan mit Planbeschreibung. Wenn es besser passt: gezielte Beratung oder Begleitung über einen längeren Zeitraum.</div>
-      </div>
-      <div class="fl-st opt">
-        <div class="fl-n">3</div>
-        <div class="fl-t">Umsetzung <small>optional</small></div>
-        <div class="fl-d">Auf Wunsch setzen wir den Plan mit einem erfahrenen Team baulich um – angepasst an die Gegebenheiten vor Ort.</div>
-      </div>
+    <div class="fl-row">
+      <span class="fl-p"><i>1</i>Bestandsaufnahme</span><span class="fl-a">→</span>
+      <span class="fl-p"><i>2</i>Konzept</span><span class="fl-a">→</span>
+      <span class="fl-p opt"><i>3</i>Umsetzung <small>optional</small></span>
     </div>
-    <div class="fl-alt">
-      <span>Oder direkt einsteigen:</span>
-      <button data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'><b>Nur Beratung</b> – für eine konkrete Frage</button>
-      <button onclick="show('analyse','umsetzung')"><b>Nur Umsetzung</b> – deine eigene Planung</button>
-    </div>
-    <div class="fl-ini">Unsicher, wo du stehst? <button data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Kostenloses Erstgespräch (bis zu 30 Min.) →</button></div>
-  </div>
-
-  <div class="lb">
-    <div class="l-meta">
-      <div class="l-meta-bg" style="background:var(--green);"></div>
-      <div class="l-meta-overlay"></div>
-      <div class="l-meta-content">
-        <div class="l-category">Beratung</div>
-        <div class="l-ti">Beratung</div>
-        <div class="l-pr">95 €/Std.</div>
-      </div>
-    </div>
-    <div class="lc">
-      <p>Konkrete Frage zu ökologischem Gartenbau, <a href="/blog/naturnaher-garten-artenvielfalt/" style="color:var(--green);">Biotopanlage</a>, Pflanzung oder Pflege? Einzeln buchbar (1, 2 oder mehr Stunden) – oder als laufende Begleitung über einen längeren Zeitraum.</p>
-      <button class="btn-sm" onclick="show('analyse','beratung')" style="margin-top:1.2rem;">Anfrage stellen →</button>
-    </div>
+    <p class="fl-ini">Einstieg an jeder Stelle möglich – auch nur Beratung oder nur Umsetzung. Unsicher? <button data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Kostenloses Erstgespräch →</button></p>
   </div>
 
   <div class="lb">
@@ -585,7 +542,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       </div>
     </div>
     <div class="lc">
-      <p><a href="/blog/waldgarten-planen/" style="color:var(--green);">Handgezeichnetes Permakultur-Konzept</a> mit Pflanzliste und Planbeschreibung – individuell auf dich und deine <a href="/blog/mehrjaehrige-strukturen-permakultur/" style="color:var(--green);">Fläche</a> zugeschnitten.</p>
+      <p>Bestandsaufnahme deiner Fläche – aus der Ferne oder vor Ort – und daraus ein <a href="/blog/waldgarten-planen/" style="color:var(--green);">handgezeichnetes Permakultur-Konzept</a> mit Pflanzliste und Planbeschreibung – individuell auf dich und deine <a href="/blog/mehrjaehrige-strukturen-permakultur/" style="color:var(--green);">Fläche</a> zugeschnitten.</p>
       <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:1.2rem;">
         <button class="btn-sm" onclick="openGallery('planung')">Projektbilder ansehen →</button>
         <button class="btn-sm" onclick="show('analyse','planung')">Anfrage stellen →</button>
@@ -610,6 +567,22 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
         <button class="btn-sm" onclick="openGallery('umsetzung')">Projektbilder ansehen →</button>
         <button class="btn-sm" onclick="show('analyse','umsetzung')">Anfrage stellen →</button>
       </div>
+    </div>
+  </div>
+
+  <div class="lb">
+    <div class="l-meta">
+      <div class="l-meta-bg" style="background:var(--green);"></div>
+      <div class="l-meta-overlay"></div>
+      <div class="l-meta-content">
+        <div class="l-category">Beratung</div>
+        <div class="l-ti">Beratung</div>
+        <div class="l-pr">95 €/Std.</div>
+      </div>
+    </div>
+    <div class="lc">
+      <p>Konkrete Frage zu ökologischem Gartenbau, <a href="/blog/naturnaher-garten-artenvielfalt/" style="color:var(--green);">Biotopanlage</a>, Pflanzung oder Pflege? Einzeln buchbar (1, 2 oder mehr Stunden) – oder als laufende Begleitung über einen längeren Zeitraum.</p>
+      <button class="btn-sm" onclick="show('analyse','beratung')" style="margin-top:1.2rem;">Anfrage stellen →</button>
     </div>
   </div>
 
