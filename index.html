@@ -234,6 +234,24 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 .cal-placeholder{background:var(--cream-dark);border:2px dashed rgba(28,74,42,0.2);border-radius:12px;padding:3rem 2rem;text-align:center;margin-top:3rem;}
 .cal-placeholder h2{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--text);margin-bottom:0.6rem;}
 .cal-placeholder p{font-size:0.88rem;color:var(--text-light);line-height:1.7;max-width:420px;margin:0 auto;}
+.ws{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:2.5rem auto 0;max-width:960px;text-align:left;}
+.ws-c{background:white;border:1.5px solid rgba(28,74,42,0.12);border-radius:12px;padding:1.6rem 1.7rem;display:flex;flex-direction:column;align-items:flex-start;box-shadow:0 2px 16px rgba(28,74,42,0.05);}
+.ws-main{grid-column:1/-1;border-color:var(--green);}
+.ws-q{font-family:'Playfair Display',serif;font-size:1.2rem;color:var(--text);margin-bottom:0.4rem;line-height:1.3;}
+.ws-s{font-size:0.85rem;color:var(--text-mid);line-height:1.7;font-weight:300;flex:1;}
+.ws-tl{display:grid;grid-template-columns:1fr 1.5fr 1fr 2fr;width:100%;margin:1.2rem 0 0.4rem;}
+.ws-bar{display:flex;flex-direction:column;}
+.ws-bar b{display:flex;align-items:center;gap:0.4rem;height:42px;padding:0 0.8rem;color:white;font-weight:500;font-size:0.85rem;border-right:2px solid white;}
+.ws-bar:first-child b{border-radius:6px 0 0 6px;}
+.ws-bar:last-child b{border-radius:0 6px 6px 0;border-right:none;}
+.ws-bar b small{font-size:0.65rem;font-weight:400;opacity:0.85;}
+.ws-bar span{font-size:0.7rem;color:var(--text-light);padding:0.45rem 0.8rem 0 0;line-height:1.4;}
+.ws-stripe{background:repeating-linear-gradient(135deg,var(--amber) 0 12px,#d6a43a 12px 24px);}
+.ws-act{display:flex;gap:1.2rem;align-items:center;flex-wrap:wrap;margin-top:1.2rem;}
+.ws-pri{background:var(--amber);color:white;border:none;padding:0.65rem 1.4rem;border-radius:30px;font-family:'Jost',sans-serif;font-size:0.85rem;font-weight:500;cursor:pointer;box-shadow:0 2px 12px rgba(201,146,26,0.25);transition:background 0.18s;}
+.ws-pri:hover{background:var(--amber-light);}
+.ws-lnk{background:none;border:none;padding:0;margin-top:1rem;font-family:'Jost',sans-serif;font-size:0.82rem;font-weight:600;color:var(--green);cursor:pointer;text-decoration:none;}
+.ws-act .ws-lnk{margin-top:0;font-weight:500;}
 .fl{padding:0 3rem 2.5rem;max-width:1100px;margin:0 auto;}
 .fl-row{display:flex;flex-wrap:wrap;align-items:center;gap:0.6rem 0.9rem;}
 .fl-p{display:inline-flex;align-items:center;gap:0.55rem;font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--text);}
@@ -344,6 +362,13 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 @media(max-width:900px){
   .lb,.an-in,.ab-gr,.kt-gr{grid-template-columns:1fr;}
   .fl{padding-left:1.5rem;padding-right:1.5rem;}
+  .ws{grid-template-columns:1fr;}
+  .ws-tl{grid-template-columns:1fr;}
+  .ws-bar{flex-direction:row;align-items:center;}
+  .ws-bar b{flex:0 0 56%;width:56%;min-width:0;white-space:nowrap;font-size:0.8rem;border-right:none;border-bottom:2px solid white;border-radius:0 !important;}
+  .ws-bar:first-child b{border-radius:6px 6px 0 0 !important;}
+  .ws-bar:last-child b{border-radius:0 0 6px 6px !important;border-bottom:none;}
+  .ws-bar span{padding:0 0 0 0.7rem;}
   .lc{padding:1.5rem 0 0;}
   .kf-row{grid-template-columns:1fr;}
   .steps-row{grid-template-columns:1fr 1fr;}
@@ -467,39 +492,34 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
   <div class="how-s">
     <div class="how-inner">
       <div class="eyebrow center">Wie kann ich helfen?</div>
-      <h2 style="text-align:center;">Was bringst du <em>mit</em>?</h2>
+      <h2 style="text-align:center;">Wo <em>stehst du</em>?</h2>
       <div class="divider center"></div>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem;margin-top:2.5rem;max-width:960px;margin-left:auto;margin-right:auto;">
-
-        <!-- Karte 1 -->
-        <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:12px;padding:2rem 1.6rem;display:flex;flex-direction:column;box-shadow:0 2px 16px rgba(28,74,42,0.05);">
-          <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.13em;color:var(--green);font-weight:600;margin-bottom:0.6rem;">Planung &amp; Umsetzung</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--text);margin-bottom:0.8rem;line-height:1.3;">Vom Konzept zur fertigen Fläche</div>
-          <div style="font-size:0.8rem;color:var(--text-light);line-height:1.7;font-weight:300;flex:1;">In drei Schritten: Bestandsaufnahme, Konzept, Umsetzung. Erzähl mir, was du vorhast – wir klären den nächsten Schritt im Gespräch. <button onclick="show('leistungen');setTimeout(function(){var a=document.getElementById('ablauf');if(a)a.scrollIntoView({behavior:'smooth'});},50);" style="background:none;border:none;padding:0;font:inherit;color:var(--green);font-weight:500;cursor:pointer;">Ablauf ansehen →</button></div>
-          <div style="font-size:0.82rem;color:var(--green);font-weight:500;margin-top:1rem;">Auf Anfrage</div>
-          <button onclick="show('analyse','planung')" style="margin-top:1.2rem;display:inline-block;font-size:0.78rem;font-weight:500;font-family:'Jost',sans-serif;padding:0.55rem 1.2rem;border-radius:30px;border:1.5px solid var(--green);color:var(--green);background:transparent;cursor:pointer;transition:all 0.18s;text-align:center;" onmouseover="this.style.background='var(--green)';this.style.color='white';" onmouseout="this.style.background='transparent';this.style.color='var(--green)';">Anfrage stellen →</button>
+      <div class="ws" id="ablauf">
+        <div class="ws-c ws-main">
+          <div class="ws-q">Ich habe eine Fläche und will sie neu gestalten.</div>
+          <div class="ws-s">Von der ersten Idee bis zum Gartensystem, das sich selbst trägt.</div>
+          <div class="ws-tl">
+            <div class="ws-bar"><b style="background:var(--green-light);">Erstgespräch</b><span>kostenlos · bis 30 Min.</span></div>
+            <div class="ws-bar"><b style="background:var(--green);">Planung</b><span>ca. 20–35 Arbeitsstunden, je nach Projektumfang</span></div>
+            <div class="ws-bar"><b style="background:#3a2a10;">Umsetzung <small>optional</small></b><span>ein paar Tage bis Wochen</span></div>
+            <div class="ws-bar"><b class="ws-stripe">Anwuchspflege <small>optional</small></b><span>Jahr 1–3 · danach trägt sich die Pflanzung selbst</span></div>
+          </div>
+          <div class="ws-act">
+            <button class="ws-pri" data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Kostenloses Erstgespräch →</button>
+            <button class="ws-lnk" onclick="show('leistungen')">Leistungen im Detail →</button>
+          </div>
         </div>
-
-        <!-- Karte 2 (hervorgehoben) -->
-        <div style="background:var(--green);border-radius:12px;padding:2rem 1.6rem;display:flex;flex-direction:column;box-shadow:0 4px 24px rgba(28,74,42,0.2);transform:translateY(-6px);">
-          <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.13em;color:rgba(255,255,255,0.5);font-weight:600;margin-bottom:0.6rem;">Beratung</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:white;margin-bottom:0.8rem;line-height:1.3;">Konkrete Frage? Direkt buchen.</div>
-          <div style="font-size:0.8rem;color:rgba(255,255,255,0.65);line-height:1.7;font-weight:300;flex:1;">Ökologischer Gartenbau, Biotopanlage, Pflanzung – persönlich, fachkundig und flexibel buchbar.</div>
-          <div style="font-size:0.82rem;color:var(--amber-light);font-weight:500;margin-top:1rem;">95 €/Std.</div>
-          <button data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' style="margin-top:1.2rem;display:inline-block;font-size:0.78rem;font-weight:500;font-family:'Jost',sans-serif;padding:0.55rem 1.2rem;border-radius:30px;border:1.5px solid var(--amber-light);color:var(--amber-light);background:transparent;cursor:pointer;text-align:center;transition:all 0.18s;" onmouseover="this.style.background='var(--amber-light)';this.style.color='#1c1c1c';" onmouseout="this.style.background='transparent';this.style.color='var(--amber-light)';">Termin buchen →</button>
+        <div class="ws-c">
+          <div class="ws-q">Ich habe eine konkrete Frage.</div>
+          <div class="ws-s">Beratung zu Teichbau, Biotopanlage, Pflanzung oder permakulturellen Vorgehensweisen – einzeln buchbar.</div>
+          <button class="ws-lnk" data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Beratung · 95 €/Std. →</button>
         </div>
-
-        <!-- Karte 3 -->
-        <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:12px;padding:2rem 1.6rem;display:flex;flex-direction:column;box-shadow:0 2px 16px rgba(28,74,42,0.05);">
-          <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.13em;color:var(--green);font-weight:600;margin-bottom:0.6rem;">Schnitt &amp; Pflege</div>
-          <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--text);margin-bottom:0.8rem;line-height:1.3;">Einfach anrufen</div>
-          <div style="font-size:0.8rem;color:var(--text-light);line-height:1.7;font-weight:300;flex:1;">Obstbaumschnitt oder Gartenpflege in Oberbayern &amp; Allgäu? Ruf mich direkt an.</div>
-          <div style="font-size:0.82rem;color:var(--green);font-weight:500;margin-top:1rem;">Schnitt 65 €/Std. · Pflege 45 €/Std.</div>
-          <div style="font-size:0.7rem;color:var(--text-light);margin-top:0.2rem;">Region Oberbayern &amp; Allgäu</div>
-          <a href="tel:+4917620538550" style="margin-top:1.2rem;display:inline-block;font-size:0.78rem;font-weight:500;font-family:'Jost',sans-serif;padding:0.55rem 1.2rem;border-radius:30px;border:1.5px solid var(--green);color:var(--green);background:transparent;cursor:pointer;transition:all 0.18s;text-align:center;text-decoration:none;" onmouseover="this.style.background='var(--green)';this.style.color='white';" onmouseout="this.style.background='transparent';this.style.color='var(--green)';">+49 176 20538550 →</a>
+        <div class="ws-c">
+          <div class="ws-q">Mein Garten braucht Pflege oder Schnitt.</div>
+          <div class="ws-s">Obstbaumschnitt, Gehölz- und Gartenpflege in Oberbayern &amp; Allgäu – einfach anrufen.</div>
+          <a class="ws-lnk" href="tel:+4917620538550">Pflege &amp; Schnitt · 45–65 €/Std. →</a>
         </div>
-
       </div>
     </div>
   </div>
@@ -524,14 +544,8 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
     </div>
   </div>
 
-  <!-- Ablauf -->
-  <div class="fl" id="ablauf">
-    <div class="fl-row">
-      <span class="fl-p"><i>1</i>Kostenloses Erstgespräch <small>bis 30 Min.</small></span><span class="fl-a">→</span>
-      <span class="fl-p"><i>2</i>Planung</span><span class="fl-a">→</span>
-      <span class="fl-p opt"><i>3</i>Umsetzung <small>optional</small></span>
-    </div>
-    <p class="fl-ini">Auch einzeln buchbar: Beratung sowie Pflege &amp; Schnitt.</p>
+  <div class="fl">
+    <p class="fl-ini"><button onclick="show('home');setTimeout(function(){var a=document.getElementById('ablauf');if(a)a.scrollIntoView({behavior:'smooth',block:'center'});},60);">Wie ist der Ablauf? →</button></p>
   </div>
 
   <div class="lb">
@@ -540,7 +554,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_002.webp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;opacity:0.35;mix-blend-mode:luminosity;" alt="">
       <div class="l-meta-overlay" style="background:rgba(28,60,18,0.65);"></div>
       <div class="l-meta-content">
-        <div class="l-category">Schritt 2 · Planung</div>
+        <div class="l-category">Planung</div>
         <div class="l-ti">Permakultur-Konzept</div>
         <div class="l-pr">Auf Anfrage</div>
       </div>
@@ -560,7 +574,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_012.webp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:75% 20%;z-index:0;opacity:0.35;mix-blend-mode:luminosity;" alt="">
       <div class="l-meta-overlay" style="background:rgba(40,28,10,0.65);"></div>
       <div class="l-meta-content">
-        <div class="l-category">Schritt 3 · Umsetzung</div>
+        <div class="l-category">Umsetzung</div>
         <div class="l-ti">Bau &amp; Umsetzung</div>
         <div class="l-pr">Auf Anfrage</div>
       </div>
@@ -580,13 +594,13 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       <div class="l-meta-bg" style="background:var(--green);"></div>
       <div class="l-meta-overlay"></div>
       <div class="l-meta-content">
-        <div class="l-category">Einzeln buchbar · Beratung</div>
+        <div class="l-category">Beratung</div>
         <div class="l-ti">Beratung</div>
         <div class="l-pr">95 €/Std.</div>
       </div>
     </div>
     <div class="lc">
-      <p>Konkrete Fragen, z. B. zu Teichbau, <a href="/blog/naturnaher-garten-artenvielfalt/" style="color:var(--green);">Biotopanlage</a>, Pflanzung oder Pflege? Einzeln buchbar, ab 1 Stunde.</p>
+      <p>Konkrete Fragen, z. B. zu Teichbau, <a href="/blog/naturnaher-garten-artenvielfalt/" style="color:var(--green);">Biotopanlage</a>, Pflanzung oder permakulturellen Vorgehensweisen? Einzeln buchbar, ab 1 Stunde.</p>
       <button class="btn-sm" onclick="show('analyse','beratung')" style="margin-top:1.2rem;">Anfrage stellen →</button>
     </div>
   </div>
@@ -596,7 +610,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       <div class="l-meta-bg" style="background:#1a3a1a;"></div>
       <div class="l-meta-overlay"></div>
       <div class="l-meta-content">
-        <div class="l-category">Einzeln buchbar · Pflege</div>
+        <div class="l-category">Pflege</div>
         <div class="l-ti">Pflege &amp; Schnitt</div>
         <div class="l-pr">45–65 €/Std.</div>
         <div class="l-nt">LK Weilheim-Schongau · Landsberg a.Lech · Ostallgäu · Garmisch-Partenkirchen</div>
