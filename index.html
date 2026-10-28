@@ -247,15 +247,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 .fl-go small{color:rgba(255,255,255,0.85);}
 .fl-ini{margin-top:1rem;font-size:0.88rem;color:var(--text-mid);font-weight:300;}
 .fl-ini button{background:none;border:none;padding:0;font:inherit;color:var(--green);font-weight:500;cursor:pointer;}
-.l-more{margin-top:1rem;font-size:0.85rem;color:var(--text-mid);}
-.l-more summary{cursor:pointer;color:var(--green);font-weight:500;list-style:none;}
-.l-more summary::-webkit-details-marker{display:none;}
-.l-more summary::after{content:' ↓';}
-.l-more[open] summary::after{content:' ↑';}
-.l-more p{margin:0.7rem 0 0.5rem;font-weight:300;line-height:1.7;}
-.l-more ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0.35rem;max-width:220px;}
-.l-more li{display:flex;justify-content:space-between;border-bottom:1px dashed rgba(28,74,42,0.15);padding-bottom:0.3rem;}
-.l-more b{color:var(--green);font-weight:500;}
 .l-num{position:absolute;top:-0.1rem;right:1.2rem;font-family:'Playfair Display',serif;font-size:7rem;font-weight:700;line-height:1;color:rgba(255,255,255,0.1);z-index:1;pointer-events:none;letter-spacing:-0.04em;}
 .lc{padding:0 0 0 2.5rem;}
 .lc p{font-size:0.92rem;color:var(--text-mid);line-height:1.85;font-weight:300;margin-bottom:1rem;}
@@ -538,9 +529,10 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
     <div class="fl-row">
       <span class="fl-p"><i>1</i>Kostenloses Erstgespräch <small>bis 30 Min.</small></span><span class="fl-a">→</span>
       <span class="fl-p"><i>2</i>Planung</span><span class="fl-a">→</span>
-      <span class="fl-p opt"><i>3</i>Umsetzung <small>optional</small></span>
+      <span class="fl-p opt"><i>3</i>Umsetzung <small>optional</small></span><span class="fl-a">→</span>
+      <span class="fl-p opt"><i>4</i>Pflege <small>optional</small></span>
     </div>
-    <p class="fl-ini">Beratung und Pflege sind auch einzeln buchbar.</p>
+    <p class="fl-ini">Nur eine konkrete Frage? Beratung ist auch einzeln buchbar.</p>
   </div>
 
   <div class="lb">
@@ -585,47 +577,38 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 
   <div class="lb">
     <div class="l-meta">
-      <div class="l-meta-bg" style="background:var(--green);"></div>
-      <div class="l-meta-overlay"></div>
-      <div class="l-meta-content">
-        <div class="l-category">Auch einzeln · Beratung</div>
-        <div class="l-ti">Beratung</div>
-        <div class="l-pr">95 €/Std.</div>
-      </div>
-    </div>
-    <div class="lc">
-      <p>Konkrete Fragen, z. B. zu Teichbau, <a href="/blog/naturnaher-garten-artenvielfalt/" style="color:var(--green);">Biotopanlage</a>, Pflanzung oder Pflege? Einzelne Stunden zum Stundensatz – oder als Begleitung über einen längeren Zeitraum zu günstigeren Konditionen.</p>
-      <details class="l-more">
-        <summary>Mehr zur Begleitung</summary>
-        <p>Stundenpakete für eine Begleitung über einen längeren Zeitraum – günstiger als einzelne Stunden:</p>
-        <ul>
-          <li><span>4 Std.</span><b>300 €</b></li>
-          <li><span>6 Std.</span><b>400 €</b></li>
-          <li><span>8 Std.</span><b>500 €</b></li>
-        </ul>
-      </details>
-      <button class="btn-sm" onclick="show('analyse','beratung')" style="margin-top:1.2rem;">Anfrage stellen →</button>
-    </div>
-  </div>
-
-  <div class="lb" style="border-bottom:none;">
-    <div class="l-meta">
       <div class="l-meta-bg" style="background:#1a3a1a;"></div>
       <div class="l-meta-overlay"></div>
       <div class="l-meta-content">
-        <div class="l-category">Auch einzeln · Pflege</div>
+        <div class="l-category">Schritt 4 · Pflege</div>
         <div class="l-ti">Pflege &amp; Schnitt</div>
         <div class="l-pr">45–65 €/Std.</div>
         <div class="l-nt">LK Weilheim-Schongau · Landsberg a.Lech · Ostallgäu · Garmisch-Partenkirchen</div>
       </div>
     </div>
     <div class="lc">
-      <p>Naturnaher, konzeptbasierter Obstbaumschnitt, naturnahe Gehölz- und Gartenpflege sowie praktische Begleitung bei der <a href="/blog/humusaufbau-grundlagen/" style="color:var(--green);">Systementwicklung</a>.</p>
+      <p>Anwuchs- und Entwicklungspflege nach der Umsetzung: Gießen in den ersten 2–3 Jahren, bis die Wurzeln tief genug reichen, dazu Freischneiden und <a href="/blog/humusaufbau-grundlagen/" style="color:var(--green);">Mulchen</a> – bis die Pflanzung sich selbst trägt. Wir übernehmen das für dich oder zeigen dir vor Ort, wie es geht. Außerdem: konzeptbasierter Obstbaumschnitt und naturnahe Gehölzpflege.</p>
       <div style="margin-top:1rem;display:flex;flex-direction:column;gap:0.4rem;">
         <div style="font-size:0.8rem;color:var(--text-mid);"><span style="color:var(--green);font-weight:500;">65 €/Std.</span> · Obstbaumschnitt</div>
         <div style="font-size:0.8rem;color:var(--text-mid);"><span style="color:var(--green);font-weight:500;">45 €/Std.</span> · Gehölz- &amp; Gartenpflege</div>
       </div>
       <button class="btn-sm" onclick="show('analyse','pflege')" style="margin-top:1.2rem;">Anfrage stellen →</button>
+    </div>
+  </div>
+
+  <div class="lb" style="border-bottom:none;">
+    <div class="l-meta">
+      <div class="l-meta-bg" style="background:var(--green);"></div>
+      <div class="l-meta-overlay"></div>
+      <div class="l-meta-content">
+        <div class="l-category">Einzeln buchbar · Beratung</div>
+        <div class="l-ti">Beratung</div>
+        <div class="l-pr">95 €/Std.</div>
+      </div>
+    </div>
+    <div class="lc">
+      <p>Konkrete Fragen, z. B. zu Teichbau, <a href="/blog/naturnaher-garten-artenvielfalt/" style="color:var(--green);">Biotopanlage</a>, Pflanzung oder Pflege? Einzeln buchbar, ab 1 Stunde.</p>
+      <button class="btn-sm" onclick="show('analyse','beratung')" style="margin-top:1.2rem;">Anfrage stellen →</button>
     </div>
   </div>
 
