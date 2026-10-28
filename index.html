@@ -234,6 +234,21 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 .cal-placeholder{background:var(--cream-dark);border:2px dashed rgba(28,74,42,0.2);border-radius:12px;padding:3rem 2rem;text-align:center;margin-top:3rem;}
 .cal-placeholder h2{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--text);margin-bottom:0.6rem;}
 .cal-placeholder p{font-size:0.88rem;color:var(--text-light);line-height:1.7;max-width:420px;margin:0 auto;}
+.fl{padding:0 3rem 3.5rem;max-width:1100px;margin:0 auto;}
+.fl-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2.2rem;}
+.fl-st{background:white;border:1px solid rgba(28,74,42,0.1);border-radius:12px;padding:1.6rem 1.5rem;position:relative;box-shadow:0 2px 16px rgba(28,74,42,0.05);}
+.fl-st:not(:last-child)::after{content:'→';position:absolute;right:-1.65rem;top:50%;transform:translateY(-50%);color:var(--amber);font-size:1.2rem;}
+.fl-n{width:38px;height:38px;border-radius:50%;background:var(--green);color:white;font-family:'Playfair Display',serif;font-size:1.05rem;display:flex;align-items:center;justify-content:center;margin-bottom:0.9rem;}
+.fl-st.opt .fl-n{background:transparent;border:1.5px dashed var(--green);color:var(--green);}
+.fl-t{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--text);margin-bottom:0.5rem;line-height:1.3;}
+.fl-t small{font-family:'Jost',sans-serif;font-size:0.7rem;color:var(--text-light);font-weight:400;margin-left:0.3rem;}
+.fl-d{font-size:0.85rem;color:var(--text-mid);line-height:1.7;font-weight:300;}
+.fl-alt{margin-top:1.8rem;display:flex;flex-wrap:wrap;align-items:center;gap:0.7rem;font-size:0.85rem;color:var(--text-mid);}
+.fl-alt button{font-family:'Jost',sans-serif;font-size:0.8rem;padding:0.5rem 1.1rem;border-radius:30px;border:1.5px solid rgba(28,74,42,0.25);background:transparent;color:var(--green);cursor:pointer;transition:all 0.18s;}
+.fl-alt button:hover{border-color:var(--green);background:var(--green);color:white;}
+.fl-alt button b{font-weight:600;}
+.fl-ini{margin-top:1rem;font-size:0.85rem;color:var(--text-mid);}
+.fl-ini button{background:none;border:none;padding:0;font:inherit;color:var(--green);font-weight:500;cursor:pointer;}
 .l-num{position:absolute;top:-0.1rem;right:1.2rem;font-family:'Playfair Display',serif;font-size:7rem;font-weight:700;line-height:1;color:rgba(255,255,255,0.1);z-index:1;pointer-events:none;letter-spacing:-0.04em;}
 .lc{padding:0 0 0 2.5rem;}
 .lc p{font-size:0.92rem;color:var(--text-mid);line-height:1.85;font-weight:300;margin-bottom:1rem;}
@@ -330,6 +345,9 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 
 @media(max-width:900px){
   .lb,.an-in,.ab-gr,.kt-gr{grid-template-columns:1fr;}
+  .fl{padding-left:1.5rem;padding-right:1.5rem;}
+  .fl-steps{grid-template-columns:1fr;gap:2rem;}
+  .fl-st:not(:last-child)::after{content:'↓';right:auto;left:50%;top:auto;bottom:-1.6rem;transform:translateX(-50%);}
   .lc{padding:1.5rem 0 0;}
   .kf-row{grid-template-columns:1fr;}
   .steps-row{grid-template-columns:1fr 1fr;}
@@ -462,7 +480,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
         <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:12px;padding:2rem 1.6rem;display:flex;flex-direction:column;box-shadow:0 2px 16px rgba(28,74,42,0.05);">
           <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.13em;color:var(--green);font-weight:600;margin-bottom:0.6rem;">Planung &amp; Umsetzung</div>
           <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--text);margin-bottom:0.8rem;line-height:1.3;">Vom Konzept zur fertigen Fläche</div>
-          <div style="font-size:0.8rem;color:var(--text-light);line-height:1.7;font-weight:300;flex:1;">Bestandsaufnahme, Konzept, Umsetzung – erzähl mir was du vorhast, wir klären den nächsten Schritt im Gespräch.</div>
+          <div style="font-size:0.8rem;color:var(--text-light);line-height:1.7;font-weight:300;flex:1;">In drei Schritten: Bestandsaufnahme, Konzept, Umsetzung. Erzähl mir, was du vorhast – wir klären den nächsten Schritt im Gespräch. <button onclick="show('leistungen');setTimeout(function(){var a=document.getElementById('ablauf');if(a)a.scrollIntoView({behavior:'smooth'});},50);" style="background:none;border:none;padding:0;font:inherit;color:var(--green);font-weight:500;cursor:pointer;">Ablauf ansehen →</button></div>
           <div style="font-size:0.82rem;color:var(--green);font-weight:500;margin-top:1rem;">Auf Anfrage</div>
           <button onclick="show('analyse','planung')" style="margin-top:1.2rem;display:inline-block;font-size:0.78rem;font-weight:500;font-family:'Jost',sans-serif;padding:0.55rem 1.2rem;border-radius:30px;border:1.5px solid var(--green);color:var(--green);background:transparent;cursor:pointer;transition:all 0.18s;text-align:center;" onmouseover="this.style.background='var(--green)';this.style.color='white';" onmouseout="this.style.background='transparent';this.style.color='var(--green)';">Anfrage stellen →</button>
         </div>
@@ -508,14 +526,41 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       <h2 style="margin-bottom:0;">Was ich<br><em style="font-style:italic;color:var(--green);">anbiete</em></h2>
       <button class="btn-a" onclick="openGallery()" style="flex-shrink:0;margin-top:0.5rem;">Projektbilder ansehen →</button>
     </div>
-    <p style="margin-top:1rem;font-size:0.95rem;color:var(--text-mid);">Unsicher, was zu deiner Fläche passt? <button data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' style="background:none;border:none;padding:0;font:inherit;color:var(--green);font-weight:500;cursor:pointer;text-decoration:none;">Kostenloses Erstgespräch (bis zu 30 Min.) →</button></p>
+    <p style="margin-top:1rem;">Von der ersten Idee bis zur fertigen Fläche – je nachdem, wo du gerade stehst, steigst du an der passenden Stelle ein.</p>
+  </div>
+
+  <!-- Ablauf -->
+  <div class="fl" id="ablauf">
+    <div class="eyebrow">So läuft's ab</div>
+    <div class="fl-steps">
+      <div class="fl-st">
+        <div class="fl-n">1</div>
+        <div class="fl-t">Bestandsaufnahme</div>
+        <div class="fl-d">Wir klären dein Vorhaben und was deine Fläche mitbringt – aus der Ferne über Fotos, Pläne und Infos oder bei einem Termin vor Ort.</div>
+      </div>
+      <div class="fl-st">
+        <div class="fl-n">2</div>
+        <div class="fl-t">Konzept oder Beratung</div>
+        <div class="fl-d">Meist ein handgezeichneter Entwurfsplan mit Planbeschreibung. Wenn es besser passt: gezielte Beratung oder Begleitung über einen längeren Zeitraum.</div>
+      </div>
+      <div class="fl-st opt">
+        <div class="fl-n">3</div>
+        <div class="fl-t">Umsetzung <small>optional</small></div>
+        <div class="fl-d">Auf Wunsch setzen wir den Plan mit einem erfahrenen Team baulich um – angepasst an die Gegebenheiten vor Ort.</div>
+      </div>
+    </div>
+    <div class="fl-alt">
+      <span>Oder direkt einsteigen:</span>
+      <button data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'><b>Nur Beratung</b> – für eine konkrete Frage</button>
+      <button onclick="show('analyse','umsetzung')"><b>Nur Umsetzung</b> – deine eigene Planung</button>
+    </div>
+    <div class="fl-ini">Unsicher, wo du stehst? <button data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>Kostenloses Erstgespräch (bis zu 30 Min.) →</button></div>
   </div>
 
   <div class="lb">
     <div class="l-meta">
       <div class="l-meta-bg" style="background:var(--green);"></div>
       <div class="l-meta-overlay"></div>
-      <div class="l-num">01</div>
       <div class="l-meta-content">
         <div class="l-category">Beratung</div>
         <div class="l-ti">Beratung</div>
@@ -523,7 +568,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       </div>
     </div>
     <div class="lc">
-      <p>Beratung zu ökologischem Gartenbau, <a href="/blog/naturnaher-garten-artenvielfalt/" style="color:var(--green);">Biotopanlage</a>, Pflanzung und Pflege – einzeln buchbar (1, 2 oder mehr Stunden) oder als laufende Begleitung über einen längeren Zeitraum. Unsicher, was passt? Ein kostenloses Erstgespräch (bis zu 30 Min.) klärt die Richtung; für eine strukturierte Bestandsanalyse deiner Fläche gibt's auf Wunsch ein eigenes Analyse-Paket.</p>
+      <p>Konkrete Frage zu ökologischem Gartenbau, <a href="/blog/naturnaher-garten-artenvielfalt/" style="color:var(--green);">Biotopanlage</a>, Pflanzung oder Pflege? Einzeln buchbar (1, 2 oder mehr Stunden) – oder als laufende Begleitung über einen längeren Zeitraum.</p>
       <button class="btn-sm" onclick="show('analyse','beratung')" style="margin-top:1.2rem;">Anfrage stellen →</button>
     </div>
   </div>
@@ -533,7 +578,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       <div class="l-meta-bg" style="background:#2a4a1c;"></div>
       <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_002.webp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;opacity:0.35;mix-blend-mode:luminosity;" alt="">
       <div class="l-meta-overlay" style="background:rgba(28,60,18,0.65);"></div>
-      <div class="l-num">02</div>
       <div class="l-meta-content">
         <div class="l-category">Planung</div>
         <div class="l-ti">Permakultur-Konzept</div>
@@ -554,7 +598,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       <div class="l-meta-bg" style="background:#3a2a10;"></div>
       <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_012.webp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:75% 20%;z-index:0;opacity:0.35;mix-blend-mode:luminosity;" alt="">
       <div class="l-meta-overlay" style="background:rgba(40,28,10,0.65);"></div>
-      <div class="l-num">03</div>
       <div class="l-meta-content">
         <div class="l-category">Umsetzung</div>
         <div class="l-ti">Bau &amp; Umsetzung</div>
@@ -562,7 +605,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       </div>
     </div>
     <div class="lc">
-      <p>Umsetzung auf Basis gemeinsam entwickelter Planungen – von Bepflanzung bis komplexem <a href="/blog/wasserrueckhaltung-hanggrundstueck/" style="color:var(--green);">Bauprojekt</a>. Die Umsetzung erfolgt in Kooperation mit einem erfahrenen Spezial-Team.</p>
+      <p>Umsetzung unserer Planung oder deiner eigenen, die wir vorher gemeinsam durchgehen – von Bepflanzung bis komplexem <a href="/blog/wasserrueckhaltung-hanggrundstueck/" style="color:var(--green);">Bauprojekt</a>. Die Umsetzung erfolgt in Kooperation mit einem erfahrenen Spezial-Team.</p>
       <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:1.2rem;">
         <button class="btn-sm" onclick="openGallery('umsetzung')">Projektbilder ansehen →</button>
         <button class="btn-sm" onclick="show('analyse','umsetzung')">Anfrage stellen →</button>
@@ -574,7 +617,6 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
     <div class="l-meta">
       <div class="l-meta-bg" style="background:#1a3a1a;"></div>
       <div class="l-meta-overlay"></div>
-      <div class="l-num">04</div>
       <div class="l-meta-content">
         <div class="l-category">Pflege</div>
         <div class="l-ti">Pflege &amp; Schnitt</div>
