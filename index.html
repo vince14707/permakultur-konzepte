@@ -527,7 +527,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
   <!-- Ablauf -->
   <div class="fl" id="ablauf">
     <div class="fl-row">
-      <button class="fl-p fl-go" data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'><i>1</i>Kostenloses Erstgespräch <small>30 Min.</small></button><span class="fl-a">→</span>
+      <span class="fl-p"><i>1</i>Kostenloses Erstgespräch <small>bis 30 Min.</small></span><span class="fl-a">→</span>
       <span class="fl-p"><i>2</i>Planung</span><span class="fl-a">→</span>
       <span class="fl-p opt"><i>3</i>Umsetzung <small>optional</small></span>
     </div>
@@ -616,8 +616,14 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
     <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:white;margin-bottom:0.5rem;">Projekt<em style="font-style:italic;color:var(--amber-light);">galerie</em></h2>
     <p style="color:rgba(255,255,255,0.7);font-size:0.9rem;font-weight:300;margin-bottom:1.5rem;max-width:400px;margin-left:auto;margin-right:auto;">Abgeschlossene Projekte – von der Planung bis zur Umsetzung.</p>
     <button class="btn-a" onclick="openGallery()" style="background:white;color:var(--green);font-weight:600;margin-bottom:1rem;">Galerie öffnen →</button>
-    <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.2);">
-      <button class="btn-a" onclick="show('analyse')">Eigenes Projekt anfragen →</button>
+    <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.2);">
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:white;margin-bottom:0.5rem;">Kostenloses <em style="font-style:italic;color:var(--amber-light);">Erstgespräch</em></h2>
+      <p style="color:rgba(255,255,255,0.7);font-size:0.9rem;font-weight:300;margin-bottom:1.5rem;">Bis zu 30 Minuten, unverbindlich. Einfach anrufen oder Termin buchen.</p>
+      <div style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;">
+        <a class="btn-a" href="tel:+4917620538550" style="text-decoration:none;">Anrufen: 0176 20538550</a>
+        <button class="btn-a" data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' style="background:transparent;border:1.5px solid var(--amber-light);color:var(--amber-light);box-shadow:none;">Termin buchen →</button>
+      </div>
+      <button onclick="show('analyse')" style="margin-top:1.2rem;background:none;border:none;font-family:'Jost',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.7);text-decoration:underline;cursor:pointer;">Lieber schreiben? Anfrage stellen</button>
     </div>
   </div>
 </div>
