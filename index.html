@@ -234,6 +234,19 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 .cal-placeholder{background:var(--cream-dark);border:2px dashed rgba(28,74,42,0.2);border-radius:12px;padding:3rem 2rem;text-align:center;margin-top:3rem;}
 .cal-placeholder h2{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--text);margin-bottom:0.6rem;}
 .cal-placeholder p{font-size:0.88rem;color:var(--text-light);line-height:1.7;max-width:420px;margin:0 auto;}
+.fl{padding:0 3rem 2.5rem;max-width:1100px;margin:0 auto;}
+.fl-row{display:flex;flex-wrap:wrap;align-items:center;gap:0.6rem 0.9rem;}
+.fl-p{display:inline-flex;align-items:center;gap:0.55rem;font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--text);}
+.fl-p i{font-style:normal;width:30px;height:30px;border-radius:50%;background:var(--green);color:white;font-size:0.9rem;display:inline-flex;align-items:center;justify-content:center;}
+.fl-p.opt i{background:transparent;border:1.5px dashed var(--green);color:var(--green);}
+.fl-p small{font-family:'Jost',sans-serif;font-size:0.7rem;color:var(--text-light);}
+.fl-a{color:var(--amber);}
+.fl-go{border:none;cursor:pointer;background:var(--amber);color:white;padding:0.45rem 1.1rem 0.45rem 0.45rem;border-radius:30px;box-shadow:0 2px 12px rgba(201,146,26,0.3);transition:background 0.18s;}
+.fl-go:hover{background:var(--amber-light);}
+.fl-go i{background:white;color:var(--amber);}
+.fl-go small{color:rgba(255,255,255,0.85);}
+.fl-ini{margin-top:1rem;font-size:0.88rem;color:var(--text-mid);font-weight:300;}
+.fl-ini button{background:none;border:none;padding:0;font:inherit;color:var(--green);font-weight:500;cursor:pointer;}
 .l-num{position:absolute;top:-0.1rem;right:1.2rem;font-family:'Playfair Display',serif;font-size:7rem;font-weight:700;line-height:1;color:rgba(255,255,255,0.1);z-index:1;pointer-events:none;letter-spacing:-0.04em;}
 .lc{padding:0 0 0 2.5rem;}
 .lc p{font-size:0.92rem;color:var(--text-mid);line-height:1.85;font-weight:300;margin-bottom:1rem;}
@@ -330,6 +343,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 
 @media(max-width:900px){
   .lb,.an-in,.ab-gr,.kt-gr{grid-template-columns:1fr;}
+  .fl{padding-left:1.5rem;padding-right:1.5rem;}
   .lc{padding:1.5rem 0 0;}
   .kf-row{grid-template-columns:1fr;}
   .steps-row{grid-template-columns:1fr 1fr;}
@@ -462,7 +476,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
         <div style="background:white;border:1px solid rgba(28,74,42,0.1);border-radius:12px;padding:2rem 1.6rem;display:flex;flex-direction:column;box-shadow:0 2px 16px rgba(28,74,42,0.05);">
           <div style="font-size:0.62rem;text-transform:uppercase;letter-spacing:0.13em;color:var(--green);font-weight:600;margin-bottom:0.6rem;">Planung &amp; Umsetzung</div>
           <div style="font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--text);margin-bottom:0.8rem;line-height:1.3;">Vom Konzept zur fertigen Fläche</div>
-          <div style="font-size:0.8rem;color:var(--text-light);line-height:1.7;font-weight:300;flex:1;">Bestandsaufnahme, Konzept, Umsetzung – erzähl mir was du vorhast, wir klären den nächsten Schritt im Gespräch.</div>
+          <div style="font-size:0.8rem;color:var(--text-light);line-height:1.7;font-weight:300;flex:1;">In drei Schritten: Bestandsaufnahme, Konzept, Umsetzung. Erzähl mir, was du vorhast – wir klären den nächsten Schritt im Gespräch. <button onclick="show('leistungen');setTimeout(function(){var a=document.getElementById('ablauf');if(a)a.scrollIntoView({behavior:'smooth'});},50);" style="background:none;border:none;padding:0;font:inherit;color:var(--green);font-weight:500;cursor:pointer;">Ablauf ansehen →</button></div>
           <div style="font-size:0.82rem;color:var(--green);font-weight:500;margin-top:1rem;">Auf Anfrage</div>
           <button onclick="show('analyse','planung')" style="margin-top:1.2rem;display:inline-block;font-size:0.78rem;font-weight:500;font-family:'Jost',sans-serif;padding:0.55rem 1.2rem;border-radius:30px;border:1.5px solid var(--green);color:var(--green);background:transparent;cursor:pointer;transition:all 0.18s;text-align:center;" onmouseover="this.style.background='var(--green)';this.style.color='white';" onmouseout="this.style.background='transparent';this.style.color='var(--green)';">Anfrage stellen →</button>
         </div>
@@ -508,24 +522,16 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       <h2 style="margin-bottom:0;">Was ich<br><em style="font-style:italic;color:var(--green);">anbiete</em></h2>
       <button class="btn-a" onclick="openGallery()" style="flex-shrink:0;margin-top:0.5rem;">Projektbilder ansehen →</button>
     </div>
-    <p style="margin-top:1rem;font-size:0.95rem;color:var(--text-mid);">Unsicher, was zu deiner Fläche passt? <button data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' style="background:none;border:none;padding:0;font:inherit;color:var(--green);font-weight:500;cursor:pointer;text-decoration:none;">Kostenloses Erstgespräch (bis zu 30 Min.) →</button></p>
   </div>
 
-  <div class="lb">
-    <div class="l-meta">
-      <div class="l-meta-bg" style="background:var(--green);"></div>
-      <div class="l-meta-overlay"></div>
-      <div class="l-num">01</div>
-      <div class="l-meta-content">
-        <div class="l-category">Beratung</div>
-        <div class="l-ti">Beratung</div>
-        <div class="l-pr">95 €/Std.</div>
-      </div>
+  <!-- Ablauf -->
+  <div class="fl" id="ablauf">
+    <div class="fl-row">
+      <span class="fl-p"><i>1</i>Kostenloses Erstgespräch <small>bis 30 Min.</small></span><span class="fl-a">→</span>
+      <span class="fl-p"><i>2</i>Planung</span><span class="fl-a">→</span>
+      <span class="fl-p opt"><i>3</i>Umsetzung <small>optional</small></span>
     </div>
-    <div class="lc">
-      <p>Beratung zu ökologischem Gartenbau, <a href="/blog/naturnaher-garten-artenvielfalt/" style="color:var(--green);">Biotopanlage</a>, Pflanzung und Pflege – einzeln buchbar (1, 2 oder mehr Stunden) oder als laufende Begleitung über einen längeren Zeitraum. Unsicher, was passt? Ein kostenloses Erstgespräch (bis zu 30 Min.) klärt die Richtung; für eine strukturierte Bestandsanalyse deiner Fläche gibt's auf Wunsch ein eigenes Analyse-Paket.</p>
-      <button class="btn-sm" onclick="show('analyse','beratung')" style="margin-top:1.2rem;">Anfrage stellen →</button>
-    </div>
+    <p class="fl-ini">Auch einzeln buchbar: Beratung sowie Pflege &amp; Schnitt.</p>
   </div>
 
   <div class="lb">
@@ -533,15 +539,14 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       <div class="l-meta-bg" style="background:#2a4a1c;"></div>
       <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_002.webp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;opacity:0.35;mix-blend-mode:luminosity;" alt="">
       <div class="l-meta-overlay" style="background:rgba(28,60,18,0.65);"></div>
-      <div class="l-num">02</div>
       <div class="l-meta-content">
-        <div class="l-category">Planung</div>
+        <div class="l-category">Schritt 2 · Planung</div>
         <div class="l-ti">Permakultur-Konzept</div>
         <div class="l-pr">Auf Anfrage</div>
       </div>
     </div>
     <div class="lc">
-      <p><a href="/blog/waldgarten-planen/" style="color:var(--green);">Handgezeichnetes Permakultur-Konzept</a> mit Pflanzliste und Planbeschreibung – individuell auf dich und deine <a href="/blog/mehrjaehrige-strukturen-permakultur/" style="color:var(--green);">Fläche</a> zugeschnitten.</p>
+      <p>Bestandsaufnahme deines Projekts mit anschließendem <a href="/blog/waldgarten-planen/" style="color:var(--green);">handgezeichnetem Entwurfsplan</a> und Planbeschreibung. Bei Bedarf auch mit Detailzeichnungen, Schnitten und Pflanzplänen.</p>
       <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:1.2rem;">
         <button class="btn-sm" onclick="openGallery('planung')">Projektbilder ansehen →</button>
         <button class="btn-sm" onclick="show('analyse','planung')">Anfrage stellen →</button>
@@ -554,15 +559,15 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       <div class="l-meta-bg" style="background:#3a2a10;"></div>
       <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_012.webp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:75% 20%;z-index:0;opacity:0.35;mix-blend-mode:luminosity;" alt="">
       <div class="l-meta-overlay" style="background:rgba(40,28,10,0.65);"></div>
-      <div class="l-num">03</div>
       <div class="l-meta-content">
-        <div class="l-category">Umsetzung</div>
+        <div class="l-category">Schritt 3 · Umsetzung</div>
         <div class="l-ti">Bau &amp; Umsetzung</div>
         <div class="l-pr">Auf Anfrage</div>
       </div>
     </div>
     <div class="lc">
-      <p>Umsetzung auf Basis gemeinsam entwickelter Planungen – von Bepflanzung bis komplexem <a href="/blog/wasserrueckhaltung-hanggrundstueck/" style="color:var(--green);">Bauprojekt</a>. Die Umsetzung erfolgt in Kooperation mit einem erfahrenen Spezial-Team.</p>
+      <p>Umsetzung unserer Planung oder deiner eigenen, die wir vorher gemeinsam durchgehen – von Bepflanzung bis komplexem <a href="/blog/wasserrueckhaltung-hanggrundstueck/" style="color:var(--green);">Bauprojekt</a>. Die Umsetzung erfolgt in Kooperation mit einem erfahrenen Experten-Team.</p>
+      <p style="margin-top:0.8rem;"><strong style="font-weight:500;color:var(--green);">Optional: Anwuchs- und Entwicklungspflege als Pauschalpaket.</strong> Wir kümmern uns in den ersten Jahren nach der Pflanzung um alles, was nötig ist – etwa Gießen in Trockenphasen oder Freischneiden –, bis die Wurzeln tief genug reichen und die Pflanzung sich selbst trägt.</p>
       <div style="display:flex;gap:0.8rem;flex-wrap:wrap;margin-top:1.2rem;">
         <button class="btn-sm" onclick="openGallery('umsetzung')">Projektbilder ansehen →</button>
         <button class="btn-sm" onclick="show('analyse','umsetzung')">Anfrage stellen →</button>
@@ -570,20 +575,35 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
     </div>
   </div>
 
+  <div class="lb">
+    <div class="l-meta">
+      <div class="l-meta-bg" style="background:var(--green);"></div>
+      <div class="l-meta-overlay"></div>
+      <div class="l-meta-content">
+        <div class="l-category">Einzeln buchbar · Beratung</div>
+        <div class="l-ti">Beratung</div>
+        <div class="l-pr">95 €/Std.</div>
+      </div>
+    </div>
+    <div class="lc">
+      <p>Konkrete Fragen, z. B. zu Teichbau, <a href="/blog/naturnaher-garten-artenvielfalt/" style="color:var(--green);">Biotopanlage</a>, Pflanzung oder Pflege? Einzeln buchbar, ab 1 Stunde.</p>
+      <button class="btn-sm" onclick="show('analyse','beratung')" style="margin-top:1.2rem;">Anfrage stellen →</button>
+    </div>
+  </div>
+
   <div class="lb" style="border-bottom:none;">
     <div class="l-meta">
       <div class="l-meta-bg" style="background:#1a3a1a;"></div>
       <div class="l-meta-overlay"></div>
-      <div class="l-num">04</div>
       <div class="l-meta-content">
-        <div class="l-category">Pflege</div>
+        <div class="l-category">Einzeln buchbar · Pflege</div>
         <div class="l-ti">Pflege &amp; Schnitt</div>
         <div class="l-pr">45–65 €/Std.</div>
         <div class="l-nt">LK Weilheim-Schongau · Landsberg a.Lech · Ostallgäu · Garmisch-Partenkirchen</div>
       </div>
     </div>
     <div class="lc">
-      <p>Naturnaher, konzeptbasierter Obstbaumschnitt, naturnahe Gehölz- und Gartenpflege sowie praktische Begleitung bei der <a href="/blog/humusaufbau-grundlagen/" style="color:var(--green);">Systementwicklung</a>.</p>
+      <p>Konzeptbasierter Obstbaumschnitt, naturnahe Gehölz- und Gartenpflege sowie praktische Begleitung bei der <a href="/blog/humusaufbau-grundlagen/" style="color:var(--green);">Systementwicklung</a>.</p>
       <div style="margin-top:1rem;display:flex;flex-direction:column;gap:0.4rem;">
         <div style="font-size:0.8rem;color:var(--text-mid);"><span style="color:var(--green);font-weight:500;">65 €/Std.</span> · Obstbaumschnitt</div>
         <div style="font-size:0.8rem;color:var(--text-mid);"><span style="color:var(--green);font-weight:500;">45 €/Std.</span> · Gehölz- &amp; Gartenpflege</div>
@@ -597,8 +617,14 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
     <h2 style="font-family:'Playfair Display',serif;font-size:1.8rem;color:white;margin-bottom:0.5rem;">Projekt<em style="font-style:italic;color:var(--amber-light);">galerie</em></h2>
     <p style="color:rgba(255,255,255,0.7);font-size:0.9rem;font-weight:300;margin-bottom:1.5rem;max-width:400px;margin-left:auto;margin-right:auto;">Abgeschlossene Projekte – von der Planung bis zur Umsetzung.</p>
     <button class="btn-a" onclick="openGallery()" style="background:white;color:var(--green);font-weight:600;margin-bottom:1rem;">Galerie öffnen →</button>
-    <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.2);">
-      <button class="btn-a" onclick="show('analyse')">Eigenes Projekt anfragen →</button>
+    <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.2);">
+      <h2 style="font-family:'Playfair Display',serif;font-size:1.6rem;color:white;margin-bottom:0.5rem;">Kostenloses <em style="font-style:italic;color:var(--amber-light);">Erstgespräch</em></h2>
+      <p style="color:rgba(255,255,255,0.7);font-size:0.9rem;font-weight:300;margin-bottom:1.5rem;">Bis zu 30 Minuten, unverbindlich. Einfach anrufen oder Termin buchen.</p>
+      <div style="display:flex;gap:0.8rem;justify-content:center;flex-wrap:wrap;">
+        <a class="btn-a" href="tel:+4917620538550" style="text-decoration:none;">Anrufen: 0176 20538550</a>
+        <button class="btn-a" data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' style="background:transparent;border:1.5px solid var(--amber-light);color:var(--amber-light);box-shadow:none;">Termin buchen →</button>
+      </div>
+      <button onclick="show('analyse')" style="margin-top:1.2rem;background:none;border:none;font-family:'Jost',sans-serif;font-size:0.85rem;color:rgba(255,255,255,0.7);text-decoration:underline;cursor:pointer;">Lieber schreiben? Anfrage stellen</button>
     </div>
   </div>
 </div>
