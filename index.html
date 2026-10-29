@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://fonts.googleapis.com https://fonts.gstatic.com https://permakultur-api.vincent-hahn.workers.dev https://faq-bot.vincent-hahn.workers.dev https://formspree.io https://app.cal.eu https://cal.eu; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://app.cal.eu; frame-src https://app.cal.eu https://cal.eu; img-src 'self' data: https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev;">
 <title>Permakultur Design & Beratung – Vincent Hahn | Weilheim & Oberbayern</title>
-<meta name="description" content="Permakultur-Planung in Weilheim, Oberbayern & Allgäu – deutschlandweit, international, Erfahrung mit Trockenregionen Südeuropas. Jetzt anfragen.">
+<meta name="description" content="Permakultur-Planung, Beratung & ökologischer Gartenbau in Weilheim, Oberbayern & Allgäu – für Gärten, die sich selbst tragen. Kostenloses Erstgespräch.">
 <meta name="keywords" content="Permakultur, Permakultur Design, Permakultur Beratung, Permakultur Planung, ökologischer Gartenbau, Naturgarten, Biotopanlage, regenerative Landschaftsgestaltung, Permakultur Oberbayern, Permakultur Allgäu, Permakultur Bayern, Obstbaumschnitt, Gartenpflege Weilheim, Permakultur Konzept, Permakultur Trockenheit, Dürre resilienter Garten, mediterrane Permakultur, Permakultur Südeuropa, Wassermanagement trockene Böden">
 <meta name="author" content="Vincent Hahn">
 <meta name="robots" content="index, follow">
@@ -78,7 +78,7 @@
         "name": "Vincent Hahn",
         "sameAs": "https://permakultur-konzepte.de"
       },
-      "url": "https://permakultur-konzepte.de/#p-kurse"
+      "url": "https://permakultur-konzepte.de/#kurse"
     },
     {
       "@type": "Course",
@@ -90,7 +90,7 @@
         "name": "Vincent Hahn",
         "sameAs": "https://permakultur-konzepte.de"
       },
-      "url": "https://permakultur-konzepte.de/#p-kurse"
+      "url": "https://permakultur-konzepte.de/#kurse"
     },
     {
       "@type": "Course",
@@ -102,11 +102,13 @@
         "name": "Vincent Hahn",
         "sameAs": "https://permakultur-konzepte.de"
       },
-      "url": "https://permakultur-konzepte.de/#p-kurse"
+      "url": "https://permakultur-konzepte.de/#kurse"
     }
   ]
 }
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -158,6 +160,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 .hero-inner{max-width:700px;margin:0 auto;}
 .h-ey{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.9);font-weight:500;margin-bottom:1.8rem;text-shadow:0 1px 8px rgba(0,0,0,0.6);}
 .hero-s h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5vw,4.2rem);line-height:1.1;color:white;margin-bottom:1.4rem;font-weight:600;}
+.hero-s h1 .h-ey{display:block;font-family:'Jost',sans-serif;line-height:1.5;}
 .hero-s h1 em{font-style:italic;color:var(--amber-light);}
 .h-desc{font-size:1.05rem;color:rgba(255,255,255,0.9);line-height:1.8;font-weight:300;max-width:560px;margin:0 auto 0.8rem;text-shadow:0 1px 8px rgba(0,0,0,0.5);}
 .h-reg{font-size:0.77rem;color:var(--text-light);margin-bottom:2.5rem;}
@@ -234,6 +237,8 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 .cal-placeholder{background:var(--cream-dark);border:2px dashed rgba(28,74,42,0.2);border-radius:12px;padding:3rem 2rem;text-align:center;margin-top:3rem;}
 .cal-placeholder h2{font-family:'Playfair Display',serif;font-size:1.4rem;color:var(--text);margin-bottom:0.6rem;}
 .cal-placeholder p{font-size:0.88rem;color:var(--text-light);line-height:1.7;max-width:420px;margin:0 auto;}
+.bridge{font-family:'Playfair Display',serif;font-style:italic;font-size:1.25rem;color:var(--green);margin-top:2rem;}
+.bridge::after{content:'↓';display:block;font-style:normal;color:var(--amber);font-size:1.2rem;margin-top:0.6rem;}
 .ws{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:2.5rem auto 0;max-width:960px;text-align:left;}
 .ws-c{background:white;border:1.5px solid rgba(28,74,42,0.12);border-radius:12px;padding:1.6rem 1.7rem;display:flex;flex-direction:column;align-items:flex-start;box-shadow:0 2px 16px rgba(28,74,42,0.05);}
 .ws-main{grid-column:1/-1;border-color:var(--green);}
@@ -452,24 +457,23 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 <div class="page active" id="p-home">
   <div class="hero-s" role="img" aria-label="Permakultur-Projekt in Südspanien – trockenheitsresistente Landschaftsgestaltung">
     <div class="hero-inner">
-      <div class="h-ey">Permakultur Design & Beratung · Oberbayern & Allgäu</div>
-      <h1>Deine Fläche.<br><em>Lebendig &amp; zukunftsfähig.</em></h1>
+      <h1><span class="h-ey">Permakultur Design &amp; Beratung · Oberbayern &amp; Allgäu</span>Deine Fläche.<br><em>Lebendig &amp; zukunftsfähig.</em></h1>
       <p class="h-desc">Permakultur-Planung, ökologischer Gartenbau und Biotopanlage – ich begleite dich von der ersten Idee bis zur fertigen Fläche.</p>
       <div class="h-btns">
-        <button class="btn-a" onclick="show('analyse')">Anfrage stellen</button>
+        <button class="btn-a" onclick="show('analyse')">Kontakt</button>
         <button class="btn-ow" onclick="show('leistungen')">Leistungen</button>
       </div>
     </div>
     <div style="position:absolute;bottom:1rem;right:1.2rem;z-index:2;font-size:0.68rem;color:rgba(255,255,255,0.55);text-shadow:0 1px 4px rgba(0,0,0,0.5);">Permakultur-Projekt, Südspanien</div>
   </div>
 
-  <div class="what-s" style="padding:5rem 2rem;background:var(--white);">
+  <div class="what-s" style="padding:5rem 2rem 1rem;background:var(--white);">
     <div style="max-width:760px;margin:0 auto;text-align:center;">
       <div class="eyebrow center">Grundlagen</div>
       <h2 style="font-family:'Playfair Display',serif;font-size:2rem;color:var(--text);margin-bottom:0.8rem;">Was das <em style="font-style:italic;color:var(--green);">konkret</em> bedeutet</h2>
       <div class="divider center"></div>
       <p style="font-family:'Playfair Display',serif;font-style:italic;font-size:1.15rem;color:var(--green);margin-top:1.5rem;">Eine Ursache. Viele Wirkungen.</p>
-      <p style="font-size:0.95rem;line-height:1.8;color:var(--text-light);font-weight:300;margin-top:0.8rem;">Für Wasserspeicherung, Kühlung, Bodenaufbau oder CO₂-Bindung werden gerade vielerorts aufwändige technische Lösungen gesucht. Die richtige Pflanzung schafft das alles gleichzeitig – ganz ohne Technik, allein durch die passende Anordnung von <a href="/blog/mehrjaehrige-strukturen-permakultur/" style="color:var(--green);text-decoration:underline;">mehrjährigen Gehölzen und Sträuchern</a>. Genau das plane, begleite und setze ich um: Pflanzungen und Biotopanlagen, die sich nach ein paar Jahren weitgehend selbst tragen.</p>
+      <p style="font-size:0.95rem;line-height:1.8;color:var(--text-light);font-weight:300;margin-top:0.8rem;">Für Wasserspeicherung, Kühlung der Umgebungsluft, Bodenaufbau oder CO₂-Bindung werden gerade vielerorts aufwändige technische Lösungen gesucht. Die richtige Pflanzung schafft das alles gleichzeitig – ganz ohne Technik, allein durch die passende Anordnung von <a href="/blog/mehrjaehrige-strukturen-permakultur/" style="color:var(--green);text-decoration:underline;">mehrjährigen Gehölzen und Sträuchern</a>. Genau das plane, begleite und setze ich um: Pflanzungen und produktive Biotopanlagen, die sich nach ein paar Jahren weitgehend selbst tragen.</p>
       <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:0.6rem;margin-top:1.5rem;">
         <span style="font-size:0.78rem;color:var(--green);border:1px solid rgba(28,74,42,0.25);background:var(--cream);border-radius:30px;padding:0.45rem 1rem;">Weniger Gießen</span>
         <span style="font-size:0.78rem;color:var(--green);border:1px solid rgba(28,74,42,0.25);background:var(--cream);border-radius:30px;padding:0.45rem 1rem;">Weniger Düngen</span>
@@ -478,19 +482,10 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
         <a href="/blog/naturnaher-garten-artenvielfalt/" style="font-size:0.78rem;color:var(--green);border:1px solid rgba(28,74,42,0.25);background:var(--cream);border-radius:30px;padding:0.45rem 1rem;text-decoration:none;">Mehr Artenvielfalt</a>
         <span style="font-size:0.78rem;color:var(--green);border:1px solid rgba(28,74,42,0.25);background:var(--cream);border-radius:30px;padding:0.45rem 1rem;">Weniger Schädlingsdruck</span>
         <span style="font-size:0.78rem;color:var(--green);border:1px solid rgba(28,74,42,0.25);background:var(--cream);border-radius:30px;padding:0.45rem 1rem;">Weniger Dürre- &amp; Hochwasserschäden</span>
+        <span style="font-size:0.78rem;color:var(--green);border:1px solid rgba(28,74,42,0.25);background:var(--cream);border-radius:30px;padding:0.45rem 1rem;">Mehr Krisensicherheit</span>
       </div>
-      <p style="font-size:0.95rem;line-height:1.8;color:var(--text-light);font-weight:300;margin-top:1.5rem;">Das reicht von Hecken bis zu durchgeplanten Selbstversorger-Projekten. Der fachliche Rahmen dahinter heißt Permakultur: Standortbesonderheiten wie Hanglage, Nässe oder Trockenheit werden gezielt genutzt statt bekämpft. Und im größeren Bild verändern viele einzeln umgesetzte Flächen zusammen das Kleinklima ganzer Regionen spürbar – jede gepflanzte Fläche zählt.</p>
-      <button class="btn-ow" onclick="show('leistungen')" style="margin-top:1.8rem;">Leistungen ansehen</button>
-    </div>
-  </div>
-
-  <div class="what-s-deep" style="padding:5rem 2rem;background:var(--cream-dark);">
-    <div style="max-width:760px;margin:0 auto;text-align:center;">
-      <div class="eyebrow center">Für alle, die es genauer wissen wollen</div>
-      <h2 style="font-family:'Playfair Display',serif;font-size:2rem;color:var(--text);margin-bottom:0.8rem;">Was ist <em style="font-style:italic;color:var(--green);">Permakultur</em>?</h2>
-      <div class="divider center"></div>
-      <p style="font-size:0.95rem;line-height:1.8;color:var(--text-light);font-weight:300;margin-top:1.5rem;">Permakultur ist ein Gestaltungsansatz für Systeme, die sich langfristig selbst tragen und regenerativ wirken – ursprünglich für dauerhafte Agrarsysteme entwickelt, lässt er sich ebenso auf Hausgärten, essbare Landschaften oder autarke Selbstversorger-Projekte anwenden. Statt gegen natürliche Prozesse zu arbeiten, wird mit dem gearbeitet, was bereits da ist: Standortfaktoren gelten dabei nie als Nachteil, sondern als Besonderheit, die sich gezielt zum Vorteil nutzen lässt – ökologisch, wirtschaftlich und sozial zugleich, gemeinsam gedacht statt gegeneinander ausgeglichen.</p>
-      <p style="font-size:0.95rem;line-height:1.8;color:var(--text-light);font-weight:300;margin-top:1rem;">Im Zentrum stehen die jeweilige Fläche und die Menschen, die sie nutzen, mit ihren Zielen und Bedürfnissen. Das Ergebnis: Systeme, die mit der Zeit robuster, ertragreicher und artenreicher werden. Genau das plane und begleite ich – von der ersten Analyse bis zur Umsetzung.</p>
+      <p style="font-size:0.95rem;line-height:1.8;color:var(--text-light);font-weight:300;margin-top:1.5rem;">Das reicht von artenreichen Wildhecken bis zu durchgeplanten Selbstversorger-Projekten. Der fachliche Rahmen dahinter heißt <a href="#permakultur" onclick="var t=document.getElementById('permakultur');if(t){t.scrollIntoView({behavior:'smooth'});}return false;" style="color:var(--green);text-decoration:underline;">Permakultur</a>: Standortbesonderheiten wie Hanglage, Nässe oder unfruchtbarer Boden werden gezielt genutzt statt bekämpft. Und im größeren Bild verändern viele einzeln umgesetzte Flächen zusammen das Kleinklima ganzer Regionen spürbar – jede gepflanzte Fläche zählt!</p>
+      <p class="bridge">Auch deine. Was auf deiner Fläche möglich ist, finden wir gemeinsam heraus.</p>
     </div>
   </div>
 
@@ -532,6 +527,16 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
     </div>
   </div>
 
+  <div class="what-s-deep" id="permakultur" style="padding:5rem 2rem;background:var(--cream-dark);">
+    <div style="max-width:760px;margin:0 auto;text-align:center;">
+      <div class="eyebrow center">Für alle, die es genauer wissen wollen</div>
+      <h2 style="font-family:'Playfair Display',serif;font-size:2rem;color:var(--text);margin-bottom:0.8rem;">Was ist <em style="font-style:italic;color:var(--green);">Permakultur</em>?</h2>
+      <div class="divider center"></div>
+      <p style="font-size:0.95rem;line-height:1.8;color:var(--text-light);font-weight:300;margin-top:1.5rem;">Permakultur ist ein Gestaltungsansatz für Systeme, die sich langfristig selbst tragen und regenerativ wirken – ursprünglich für dauerhafte Agrarsysteme entwickelt, lässt er sich ebenso auf Hausgärten, essbare Landschaften oder autarke Selbstversorger-Projekte anwenden. Statt gegen natürliche Prozesse zu arbeiten, wird mit dem gearbeitet, was bereits da ist: Individualität und Besonderheiten eines Standorts gelten dabei als Vorteile, die gezielt genutzt und gefördert werden – ökologisch, wirtschaftlich und sozial zugleich, gemeinsam gedacht statt gegeneinander ausgeglichen.</p>
+      <p style="font-size:0.95rem;line-height:1.8;color:var(--text-light);font-weight:300;margin-top:1rem;">Im Zentrum stehen die jeweilige Fläche und die Menschen, die sie nutzen, mit ihren Zielen und Bedürfnissen. Das Ergebnis: Systeme, die mit der Zeit robuster, ertragreicher und artenreicher werden – und damit entscheidende Grundsteine für eine enkeltaugliche, zukunftsfähige Kultur bilden.</p>
+    </div>
+  </div>
+
   <div class="h-cta">
     <h2><em>Bereit?</em></h2>
     <p>Schreib mir, was du vorhast.</p>
@@ -559,7 +564,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
   <div class="lb">
     <div class="l-meta">
       <div class="l-meta-bg" style="background:#2a4a1c;"></div>
-      <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_002.webp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;opacity:0.35;mix-blend-mode:luminosity;" alt="">
+      <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_002.webp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;opacity:0.35;mix-blend-mode:luminosity;" alt="">
       <div class="l-meta-overlay" style="background:rgba(28,60,18,0.65);"></div>
       <div class="l-meta-content">
         <div class="l-category">Planung</div>
@@ -579,7 +584,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
   <div class="lb">
     <div class="l-meta">
       <div class="l-meta-bg" style="background:#3a2a10;"></div>
-      <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_012.webp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:75% 20%;z-index:0;opacity:0.35;mix-blend-mode:luminosity;" alt="">
+      <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_012.webp" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:75% 20%;z-index:0;opacity:0.35;mix-blend-mode:luminosity;" alt="">
       <div class="l-meta-overlay" style="background:rgba(40,28,10,0.65);"></div>
       <div class="l-meta-content">
         <div class="l-category">Umsetzung</div>
@@ -875,7 +880,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
   <div class="ab-pg">
     <div class="ab-gr">
       <div class="ab-img">
-        <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_003.webp" alt="Vincent Hahn" style="object-position:top center;">
+        <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_003.webp" alt="Vincent Hahn" style="object-position:top center;">
       </div>
       <div class="ab-c">
         <div class="eyebrow">Über mich</div>
@@ -992,28 +997,28 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
     <div id="gsec-planung" class="gsec" style="display:none;">
       <div class="gallery-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_002.webp','Permakultur-Garten · Dresden / Sachsen, DE')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-          <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_002.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Permakultur-Garten Planung Dresden Sachsen">
+          <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_002.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Permakultur-Garten Planung Dresden Sachsen">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
             <div style="font-size:0.72rem;color:var(--amber-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;">Permakultur-Garten · Planung</div>
             <div style="font-size:0.9rem;color:white;font-family:'Playfair Display',serif;">Dresden / Sachsen, DE</div>
           </div>
         </div>
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_004.webp','Permakultur-Garten · München / Bayern, DE')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-          <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_004.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Permakultur-Garten Planung München Bayern">
+          <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_004.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Permakultur-Garten Planung München Bayern">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
             <div style="font-size:0.72rem;color:var(--amber-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;">Permakultur-Garten · Planung</div>
             <div style="font-size:0.9rem;color:white;font-family:'Playfair Display',serif;">München / Bayern, DE</div>
           </div>
         </div>
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_005.webp','Permakultur-Park · Hall / Tirol, AU')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-          <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_005.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Permakultur-Park Planung Hall Tirol Österreich">
+          <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_005.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Permakultur-Park Planung Hall Tirol Österreich">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
             <div style="font-size:0.72rem;color:var(--amber-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;">Permakultur-Park · Planung</div>
             <div style="font-size:0.9rem;color:white;font-family:'Playfair Display',serif;">Hall / Tirol, AU</div>
           </div>
         </div>
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_006.webp','Permakultur-Garten · Hohenfurch / Bayern, DE')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-          <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_006.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Permakultur-Garten Planung Hohenfurch Bayern">
+          <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_006.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Permakultur-Garten Planung Hohenfurch Bayern">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
             <div style="font-size:0.72rem;color:var(--amber-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;">Permakultur-Garten · Planung</div>
             <div style="font-size:0.9rem;color:white;font-family:'Playfair Display',serif;">Hohenfurch / Bayern, DE</div>
@@ -1022,7 +1027,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       </div>
 
       <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_014.webp','Nuss- &amp; Obstgarten · Planung · Hunsrück / Rheinland-Pfalz, DE')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-          <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_014.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Nuss- und Obstgarten Planung Hunsrück Rheinland-Pfalz">
+          <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_014.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Nuss- und Obstgarten Planung Hunsrück Rheinland-Pfalz">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
             <div style="font-size:0.72rem;color:var(--amber-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;">Nuss- &amp; Obstgarten · Planung</div>
             <div style="font-size:0.9rem;color:white;font-family:'Playfair Display',serif;">Hunsrück / Rheinland-Pfalz, DE</div>
@@ -1040,42 +1045,42 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       </div>
       <div class="gallery-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_007.webp','Erdkeller unter dem Gemüsegarten – handgemauerter Natursteinbogen · Westerwald, DE')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-          <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_007.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Erdkeller unter Gemüsegarten Umsetzung Westerwald">
+          <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_007.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Erdkeller unter Gemüsegarten Umsetzung Westerwald">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
             <div style="font-size:0.72rem;color:var(--amber-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;">Erdkeller · Umsetzung</div>
             <div style="font-size:0.9rem;color:white;font-family:'Playfair Display',serif;">Erdkeller unter dem Gemüsegarten</div>
           </div>
         </div>
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_008.webp','Naturstein-Trockenmauer und Feuchtbiotop im Bau · Westerwald, DE')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-          <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_008.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Naturstein-Trockenmauer und Feuchtbiotop Westerwald">
+          <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_008.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Naturstein-Trockenmauer und Feuchtbiotop Westerwald">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
             <div style="font-size:0.72rem;color:var(--amber-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;">Feuchtbiotop · Umsetzung</div>
             <div style="font-size:0.9rem;color:white;font-family:'Playfair Display',serif;">Naturstein-Trockenmauer &amp; Feuchtbiotop</div>
           </div>
         </div>
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_012.webp','Luftaufnahme: Halbrunder Sitzplatz im Bau – Schottertragschicht und Erdarbeiten · Westerwald, DE')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-          <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_012.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Luftaufnahme Naturstein-Sitzplatz im Bau Westerwald">
+          <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_012.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Luftaufnahme Naturstein-Sitzplatz im Bau Westerwald">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
             <div style="font-size:0.72rem;color:var(--amber-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;">Luftaufnahme · Umsetzung</div>
             <div style="font-size:0.9rem;color:white;font-family:'Playfair Display',serif;">Halbrunder Naturstein-Sitzplatz im Bau</div>
           </div>
         </div>
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_009.webp','Trockenheitsresistente, biodiverse Magerbeete · Westerwald, DE')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-          <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_009.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Trockenheitsresistente Magerbeete Bepflanzung Westerwald">
+          <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_009.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Trockenheitsresistente Magerbeete Bepflanzung Westerwald">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
             <div style="font-size:0.72rem;color:var(--amber-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;">Magerbeete · Fertigstellung</div>
             <div style="font-size:0.9rem;color:white;font-family:'Playfair Display',serif;">Trockenheitsresistente Bepflanzung</div>
           </div>
         </div>
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_010.webp','Steingarten, Hochbeet, Erdgewächshaus und Komposttoilette · Westerwald, DE')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-          <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_010.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Erdgewächshaus mit Steingarten und Hochbeet Westerwald">
+          <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_010.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Erdgewächshaus mit Steingarten und Hochbeet Westerwald">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
             <div style="font-size:0.72rem;color:var(--amber-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;">Erdgewächshaus · Fertigstellung</div>
             <div style="font-size:0.9rem;color:white;font-family:'Playfair Display',serif;">Steingarten, Hochbeet &amp; Komposttoilette</div>
           </div>
         </div>
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_011.webp','Gemüsegarten, Sitzplatz &amp; Feuchtbiotop im Herbst · Westerwald, DE')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-          <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_011.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Fertiger Gemüsegarten mit Sitzplatz und Feuchtbiotop Westerwald Herbst">
+          <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_011.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Fertiger Gemüsegarten mit Sitzplatz und Feuchtbiotop Westerwald Herbst">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
             <div style="font-size:0.72rem;color:var(--amber-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;">Gemüsegarten · Herbst 2024</div>
             <div style="font-size:0.9rem;color:white;font-family:'Playfair Display',serif;">Gemüsegarten, Sitzplatz &amp; Feuchtbiotop</div>
@@ -1090,56 +1095,56 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
       </div>
       <div class="gallery-grid-2" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;">
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_015.webp','Waldgarten, Feuchtbiotop und Hochbeet direkt nach der Anlage · Kloster Arenberg, Koblenz')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-          <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_015.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Waldgarten Feuchtbiotop und Hochbeet Kloster Arenberg Koblenz">
+          <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_015.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Waldgarten Feuchtbiotop und Hochbeet Kloster Arenberg Koblenz">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
             <div style="font-size:0.72rem;color:var(--amber-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;">Waldgarten · Anlage</div>
             <div style="font-size:0.9rem;color:white;font-family:'Playfair Display',serif;">Waldgarten, Feuchtbiotop &amp; Hochbeet</div>
           </div>
         </div>
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_017.webp','Waldgarten auf zwei Ebenen direkt nach der Pflanzung · Kloster Arenberg, Koblenz')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-          <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_017.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Waldgarten auf zwei Ebenen Kloster Arenberg Koblenz">
+          <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_017.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Waldgarten auf zwei Ebenen Kloster Arenberg Koblenz">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
             <div style="font-size:0.72rem;color:var(--amber-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;">Waldgarten · Pflanzung</div>
             <div style="font-size:0.9rem;color:white;font-family:'Playfair Display',serif;">Waldgarten auf zwei Ebenen</div>
           </div>
         </div>
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_018.webp','Getrocknete Mahd der Streuobstwiese wird zum Heubeet hangabwärts · Kloster Arenberg, Koblenz')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-          <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_018.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Heubeet aus Streuobstwiesen-Mahd Kloster Arenberg Koblenz">
+          <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_018.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Heubeet aus Streuobstwiesen-Mahd Kloster Arenberg Koblenz">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
             <div style="font-size:0.72rem;color:var(--amber-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;">Heubeet · Umsetzung</div>
             <div style="font-size:0.9rem;color:white;font-family:'Playfair Display',serif;">Heubeet aus Streuobstwiesen-Mahd</div>
           </div>
         </div>
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_019.webp','Waldgarten mit Hochbeet und Sitzbank aus Eiche, direkt nach der Pflanzung · Kloster Arenberg, Koblenz')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-          <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_019.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Waldgarten mit Hochbeet und Sitzbank Kloster Arenberg Koblenz">
+          <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_019.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Waldgarten mit Hochbeet und Sitzbank Kloster Arenberg Koblenz">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
             <div style="font-size:0.72rem;color:var(--amber-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;">Waldgarten · Sitzbank</div>
             <div style="font-size:0.9rem;color:white;font-family:'Playfair Display',serif;">Waldgarten mit Hochbeet &amp; Sitzbank</div>
           </div>
         </div>
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_20.webp','Gemütliche Sitznische aus Wildobst mit Sitzbank aus Eiche vor Shiitake-Pilz-Palisaden · Kloster Arenberg, Koblenz')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-          <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_20.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Sitznische aus Wildobst vor Shiitake-Palisaden Kloster Arenberg Koblenz">
+          <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_20.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Sitznische aus Wildobst vor Shiitake-Palisaden Kloster Arenberg Koblenz">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
             <div style="font-size:0.72rem;color:var(--amber-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;">Sitznische · Wildobst</div>
             <div style="font-size:0.9rem;color:white;font-family:'Playfair Display',serif;">Sitznische vor Shiitake-Palisaden</div>
           </div>
         </div>
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_21.webp','Beine-Baumel-Bank aus Eiche · Kloster Arenberg, Koblenz')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-          <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_21.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Beine-Baumel-Bank aus Eiche Kloster Arenberg Koblenz">
+          <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_21.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Beine-Baumel-Bank aus Eiche Kloster Arenberg Koblenz">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
             <div style="font-size:0.72rem;color:var(--amber-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;">Sitzbank · Eiche</div>
             <div style="font-size:0.9rem;color:white;font-family:'Playfair Display',serif;">Beine-Baumel-Bank aus Eiche</div>
           </div>
         </div>
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_22.webp','Barfußpfad · Kloster Arenberg, Koblenz')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-          <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_22.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Barfußpfad Kloster Arenberg Koblenz">
+          <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_22.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Barfußpfad Kloster Arenberg Koblenz">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
             <div style="font-size:0.72rem;color:var(--amber-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;">Barfußpfad · Sinnespfad</div>
             <div style="font-size:0.9rem;color:white;font-family:'Playfair Display',serif;">Barfußpfad</div>
           </div>
         </div>
         <div onclick="openLightbox('https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_24.webp','Holzsteg zum schwebenden Holzdeck · Kloster Arenberg, Koblenz')" style="cursor:pointer;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.12);transition:transform 0.2s;display:flex;flex-direction:column;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
-          <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_24.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Holzsteg zum Holzdeck Kloster Arenberg Koblenz">
+          <img loading="lazy" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_24.webp" style="width:100%;height:220px;object-fit:cover;display:block;" alt="Holzsteg zum Holzdeck Kloster Arenberg Koblenz">
           <div style="padding:0.9rem 1rem;background:rgba(255,255,255,0.05);flex:1;display:flex;flex-direction:column;justify-content:space-between;">
             <div style="font-size:0.72rem;color:var(--amber-light);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.2rem;">Holzsteg · Teich</div>
             <div style="font-size:0.9rem;color:white;font-family:'Playfair Display',serif;">Holzsteg zum Holzdeck</div>
@@ -1156,7 +1161,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
 <!-- LIGHTBOX -->
 <div id="lightbox" style="display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.96);align-items:center;justify-content:center;flex-direction:column;">
   <button onclick="closeLightbox()" style="position:absolute;top:1.5rem;right:1.5rem;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:white;width:44px;height:44px;border-radius:50%;font-size:1.2rem;cursor:pointer;">✕</button>
-  <img id="lightboxImg" src="" style="max-width:95vw;max-height:85vh;object-fit:contain;border-radius:6px;" alt="">
+  <img loading="lazy" id="lightboxImg" src="" style="max-width:95vw;max-height:85vh;object-fit:contain;border-radius:6px;" alt="">
   <div id="lightboxCaption" style="color:rgba(255,255,255,0.55);font-size:0.8rem;margin-top:1rem;font-family:'Jost',sans-serif;"></div>
 </div>
 
@@ -1474,6 +1479,10 @@ function downloadPDF(){
 (function() {
   var validPages = ['home','leistungen','kurse','ueber','analyse'];
   var validAnliegen = ['planung','umsetzung','beratung','schnitt','pflege','kurs','sonstiges'];
+  window.addEventListener('hashchange', function(){
+    var h = window.location.hash.replace('#','');
+    if (validPages.indexOf(h) !== -1) { show(h); }
+  });
   var hash = window.location.hash.replace('#','');
   if (validPages.indexOf(hash) !== -1) {
     window.addEventListener('DOMContentLoaded', function() {
@@ -1629,7 +1638,7 @@ function downloadPDF(){
 
     <div class="faq-msg bot">Hallo! Ich bin der KI-Assistent von Permakultur-Konzepte und beantworte Fragen zu Vincents Leistungen, Angeboten und Inhalten. Womit kann ich helfen?</div>
   </div>
-<a href="/#p-analyse" id="faq-bot-cta" onclick="faqBotTrackCTA()" style="display:block;margin:0;padding:10px 14px;background:#2d6a4f;color:white;border-radius:0;text-align:center;font-size:14px;text-decoration:none;">→ Kontaktformular öffnen</a>
+<a href="/#analyse" id="faq-bot-cta" onclick="faqBotTrackCTA();show('analyse');return false;" style="display:block;margin:0;padding:10px 14px;background:#2d6a4f;color:white;border-radius:0;text-align:center;font-size:14px;text-decoration:none;">→ Kontaktformular öffnen</a>
   <div id="faq-bot-input-row">
     <input id="faq-bot-input" type="text" placeholder="Ihre Frage..." onkeydown="if(event.key==='Enter')faqBotSend()" />
     <button id="faq-bot-send" onclick="faqBotSend()">↑</button>
