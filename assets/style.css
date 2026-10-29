@@ -287,8 +287,11 @@ nav{position:sticky;top:0;z-index:200;background:rgba(245,240,228,0.96);backdrop
   .mobile-menu button,.mobile-menu a{display:block;text-align:left;padding:0.9rem 1.5rem;font-size:0.9rem;font-family:'Jost',sans-serif;color:var(--text);text-decoration:none;background:none;border:none;cursor:pointer;border-bottom:1px solid rgba(28,74,42,0.06);}
   .mobile-menu button:last-child,.mobile-menu a:last-child{border-bottom:none;}
   .mobile-menu button:hover,.mobile-menu a:hover{background:var(--cream);}
-  .ab-img{display:block;max-height:380px;overflow:hidden;}
-  .ab-img img{width:100%;height:380px;object-fit:cover;object-position:center center;}
+  /* Portrait unter 900px vollständig zeigen statt auf 380px Höhe zu beschneiden */
+  .ab-img{display:block;max-width:420px;margin:0 auto;overflow:hidden;}
+  .ab-img img{width:100%;height:auto;}
+  /* Galerie-Vorschaubilder: festes Seitenverhältnis statt flacher Streifen bei breiter Einspaltigkeit */
+  .gallery-grid-2 img{height:auto !important;aspect-ratio:16/10;}
   .hero-s,.how-s,.h-cta,.pg-h,.lb,.ab-pg,.an-pg,.kt-pg,.im-pg{padding-left:1.5rem;padding-right:1.5rem;}
   .faq{grid-template-columns:1fr;}
   .reg-grid{grid-template-columns:1fr;}
