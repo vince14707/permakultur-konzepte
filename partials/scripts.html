@@ -1,0 +1,23 @@
+<!-- FAQ-Bot -->
+<button id="faq-bot-btn" onclick="faqBotToggle()">
+  💬 Frage stellen
+</button>
+
+<div id="faq-bot-window">
+  <div id="faq-bot-header">
+    <span>KI-Assistent – Permakultur-Konzepte</span>
+    <button id="faq-bot-close" onclick="faqBotToggle()">×</button>
+  </div>
+  <div id="faq-bot-messages">
+
+    <div class="faq-msg bot">Hallo! Ich bin der KI-Assistent von Permakultur-Konzepte und beantworte Fragen zu Vincents Leistungen, Angeboten und Inhalten. Womit kann ich helfen?</div>
+  </div>
+<a href="/kontakt/" id="faq-bot-cta" onclick="faqBotTrackCTA();show('analyse');return false;" style="display:block;margin:0;padding:10px 14px;background:#2d6a4f;color:white;border-radius:0;text-align:center;font-size:14px;text-decoration:none;">→ Kontaktformular öffnen</a>
+  <div id="faq-bot-input-row">
+    <input id="faq-bot-input" type="text" placeholder="Ihre Frage..." onkeydown="if(event.key==='Enter')faqBotSend()" />
+    <button id="faq-bot-send" onclick="faqBotSend()">↑</button>
+  </div>
+</div>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="/assets/main.js"></script>

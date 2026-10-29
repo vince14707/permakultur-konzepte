@@ -1,0 +1,28 @@
+<nav id="mainNav">
+  <div class="nav-inner">
+    <button class="nav-logo" onclick="show('home')">
+      <img src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_001.webp" style="height:48px;width:auto;display:block;" alt="Permakultur-Konzepte Logo">
+      <div>
+        <div class="nav-brand">Permakultur-Konzepte</div>
+        <div class="nav-sub">für regenerative Flächennutzung</div>
+      </div>
+    </button>
+    <div class="nav-links">
+      <a class="nl" href="/" id="n-home">Start</a>
+      <a class="nl" href="/leistungen/" id="n-leistungen">Leistungen</a>
+      <a class="nl" href="/kurse/" id="n-kurse">Kurse & Workshops</a>
+      <a class="nl" href="/ueber-mich/" id="n-ueber">Über mich</a>
+      <a class="nl" href="/blog/" id="n-blog" style="text-decoration:none;">Blog</a>
+      <a class="nl cta" href="/kontakt/" id="n-analyse">Kontakt & Anfrage</a>
+      <button class="nl hamburger" onclick="toggleNav()" style="display:none;font-size:1.3rem;background:none;border:1px solid rgba(28,74,42,0.2);border-radius:6px;cursor:pointer;color:var(--text);padding:0.3rem 0.6rem;margin-left:0.5rem;">☰</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="/">Start</a>
+    <a href="/leistungen/">Leistungen</a>
+    <a href="/kurse/">Kurse & Workshops</a>
+    <a href="/ueber-mich/">Über mich</a>
+    <a href="/blog/" onclick="closeNav()">Blog</a>
+  <a href="/kontakt/" style="color:var(--green);font-weight:500;">Kontakt & Anfrage</a>
+  </div>
+</nav>

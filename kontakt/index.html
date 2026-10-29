@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- @include head -->
+<title>Kontakt &amp; Projektanfrage – Permakultur-Konzepte | Vincent Hahn</title>
+<meta name="description" content="Erzähl mir von deinem Projekt: Anfrage für Permakultur-Planung, Umsetzung, Beratung oder Pflege stellen – oder direkt ein kostenloses Erstgespräch buchen.">
+<meta name="author" content="Vincent Hahn">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://permakultur-konzepte.de/kontakt/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Kontakt &amp; Projektanfrage – Permakultur-Konzepte | Vincent Hahn">
+<meta property="og:description" content="Erzähl mir von deinem Projekt: Anfrage für Permakultur-Planung, Umsetzung, Beratung oder Pflege stellen – oder direkt ein kostenloses Erstgespräch buchen.">
+<meta property="og:url" content="https://permakultur-konzepte.de/kontakt/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="de_DE">
+<meta property="og:image" content="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_011.webp">
+</head>
+<body data-page="analyse">
+
+<!-- @include cookie-banner -->
+
+<!-- @include nav -->
+
+<!-- KONTAKT & ANFRAGE -->
+<div class="page active" id="p-analyse">
+  <div class="kf-pg">
+
+    <div style="margin-bottom:2rem;">
+      <div class="eyebrow">Kontakt &amp; Anfrage</div>
+      <h1 style="font-family:'Playfair Display',serif;font-size:2.2rem;line-height:1.2;margin-bottom:0.6rem;color:var(--text);">Erzähl mir von<br><em style="font-style:italic;color:var(--green);">deinem Projekt</em></h1>
+    </div>
+
+    <div class="save-hint">
+      <span class="save-hint-icon">💾</span>
+      <span>Alles, was du hier einträgst, wird auf diesem Gerät gespeichert. Du kannst den Browser schließen und einfach weitermachen, wenn du wieder Zeit hast – deine Angaben sind dann noch da.</span>
+    </div>
+
+    <form id="kForm" onsubmit="sendKForm(event)">
+
+      <!-- Anliegen-Auswahl -->
+      <div class="kf-section">
+        <h2>Worum geht es?</h2>
+        <div class="ff">
+          <label for="kf-anliegen">Anliegen</label>
+          <select id="kf-anliegen" name="anliegen" onchange="updateFormFields()">
+            <option value="">– bitte wählen –</option>
+            <option value="planung">Planung / Permakultur-Konzept</option>
+            <option value="umsetzung">Umsetzung / Bauprojekt</option>
+            <option value="beratung">Beratung</option>
+            <option value="schnitt">Obstbaumschnitt</option>
+            <option value="pflege">Gartenpflege</option>
+            <option value="kurs">Kurs / Workshop</option>
+            <option value="sonstiges">Sonstiges</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Kontaktdaten -->
+      <div class="kf-section">
+        <h2>Kontakt</h2>
+        <div class="kf-row">
+          <div class="ff">
+            <label for="kf-name">Name *</label>
+            <input type="text" id="kf-name" name="name" required placeholder="Dein Name">
+          </div>
+          <div class="ff">
+            <label for="kf-email">E-Mail *</label>
+            <input type="email" id="kf-email" name="email" required placeholder="deine@email.de">
+          </div>
+        </div>
+        <div class="ff">
+          <label for="kf-tel">Telefon</label>
+          <input type="tel" id="kf-tel" name="telefon" placeholder="+49 ...">
+        </div>
+      </div>
+
+      <!-- Fläche (nur bei Planung/Umsetzung/Schnitt/Pflege) -->
+      <div class="kf-section" id="kf-block-flaeche">
+        <h2>Die Fläche</h2>
+        <div class="kf-row">
+          <div class="ff">
+            <label for="kf-ort">Ort &amp; Region</label>
+            <input type="text" id="kf-ort" name="ort" placeholder="z.B. Weilheim, Oberbayern">
+          </div>
+          <div class="ff" id="kf-block-groesse">
+            <label for="kf-groesse">Größe (ungefähr)</label>
+            <input type="text" id="kf-groesse" name="groesse" placeholder="z.B. 2.000 m², 1,5 ha">
+          </div>
+        </div>
+      </div>
+
+      <!-- Kernfragen (Planung/Umsetzung/Beratung) -->
+      <div class="kf-section" id="kf-block-projekt">
+        <h2>Dein Projekt</h2>
+
+        <div class="ff">
+          <label for="kf-wuensche">Wünsche &amp; Ziele</label>
+          <textarea id="kf-wuensche" name="wuensche" rows="4" placeholder="Welche Wünsche, Bedürfnisse, Ziele soll das Grundstück erfüllen? Wovon träumst du? Was ist dir wichtig?"></textarea>
+        </div>
+
+        <div class="ff" id="kf-block-ressourcen">
+          <label for="kf-ressourcen">Ressourcen</label>
+          <textarea id="kf-ressourcen" name="ressourcen" rows="4" placeholder="Ressourcen, die direkt vor Ort und in der Umgebung zur Verfügung stehen (Baumaterial, Heu, Arbeitskraft und Maschinen, ständige Arbeitszeit z.B. für Pflege, Knowhow, ...)."></textarea>
+        </div>
+
+        <div class="ff" id="kf-block-grenzen">
+          <label for="kf-grenzen">Begrenzungen &amp; Rahmenbedingungen</label>
+          <textarea id="kf-grenzen" name="grenzen" rows="4" placeholder="Nachbarn, Denkmalschutz, konventionelle Landwirtschaft im Umfeld, rechtliche Einschränkungen, Pacht, Eigentumsverhältnisse..."></textarea>
+        </div>
+
+        <div class="ff" id="kf-block-besonderheiten">
+          <label for="kf-besonderheiten">Besonderheiten der Fläche</label>
+          <textarea id="kf-besonderheiten" name="besonderheiten" rows="4" placeholder="Nass, trocken, felsig, steil, Hanglage, alte Bäume, Problemzonen, Bodenart wenn bekannt..."></textarea>
+        </div>
+
+        <div class="ff" id="kf-block-dateien">
+          <label for="kf-dateien">Link zu deinen Unterlagen</label>
+          <input type="url" id="kf-dateien" name="dateien" placeholder="WeTransfer, Google Drive, Dropbox... (Grundriss, Fotos, Luftbilder, Drohne)">
+          <div class="hint">Kein Pflichtfeld – aber je mehr ich vorab sehe, desto besser kann ich mich vorbereiten.</div>
+        </div>
+      </div>
+
+      <!-- Freitext (immer sichtbar) -->
+      <div class="kf-section">
+        <div class="ff">
+          <label for="kf-freitext">Sonst noch was?</label>
+          <textarea id="kf-freitext" name="freitext" rows="3" placeholder="Alles, was du noch loswerden willst."></textarea>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-top:0.5rem;">
+        <button type="submit" class="btn-a">Anfrage absenden →</button>
+        <button type="button" class="btn-g" onclick="downloadPDF()">⬇ Als PDF herunterladen</button>
+      </div>
+      <div id="kfMsg" style="display:none;margin-top:1.2rem;padding:1rem;border-radius:6px;font-size:0.88rem;"></div>
+
+    </form>
+
+    <!-- Terminbuchung -->
+    <div class="cal-placeholder">
+      <div style="font-size:2rem;margin-bottom:0.8rem;">📅</div>
+      <h2>Termin direkt <em style="font-style:italic;color:var(--green);">buchen</em></h2>
+      <p>Für eine schnelle Beratung direkt einen Termin buchen – ohne Umweg.</p>
+      <button data-cal-link="pkkonzepte/beratung" data-cal-namespace="beratung" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="btn-a" style="margin-top:1.2rem;">Beratungstermin buchen →</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- @include footer -->
+
+<!-- @include scripts -->
+</body>
+</html>

@@ -99,33 +99,7 @@ footer{background:var(--green);color:white;padding:2.5rem 3rem;display:flex;alig
 </head>
 <body>
 
-<nav>
-  <div class="nav-inner">
-    <a class="nav-logo" href="https://permakultur-konzepte.de">
-      <img width="97" height="96" src="https://pub-e7128d69c832477194f69f4230d21eb7.r2.dev/WEBSLIM/img_001.webp" style="height:48px;width:auto;display:block;" alt="Permakultur-Konzepte Logo">
-      <div>
-        <div class="nav-brand">Permakultur-Blog</div>
-        <div class="nav-sub">für regenerative Flächennutzung</div>
-      </div>
-    </a>
-    <div class="nav-links">
-      <a class="nl" href="https://permakultur-konzepte.de/#leistungen">Leistungen</a>
-      <a class="nl" href="https://permakultur-konzepte.de/#kurse">Kurse & Workshops</a>
-      <a class="nl" href="https://permakultur-konzepte.de/#ueber">Über mich</a>
-      <a class="nl" href="/blog/">Blog</a>
-      <a class="nl cta" href="https://permakultur-konzepte.de/#analyse">Kontakt & Anfrage</a>
-      <button class="nl hamburger" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mobileMenu" onclick="var m=document.getElementById('mobileMenu');var o=m.classList.toggle('open');this.setAttribute('aria-expanded',o);">☰</button>
-    </div>
-  </div>
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="https://permakultur-konzepte.de/">Start</a>
-    <a href="https://permakultur-konzepte.de/#leistungen">Leistungen</a>
-    <a href="https://permakultur-konzepte.de/#kurse">Kurse &amp; Workshops</a>
-    <a href="https://permakultur-konzepte.de/#ueber">Über mich</a>
-    <a href="/blog/">Blog</a>
-    <a href="https://permakultur-konzepte.de/#analyse">Kontakt &amp; Anfrage</a>
-  </div>
-</nav>
+<!-- @include blog-nav -->
 
 <div class="article-hero">
   <div class="article-hero-inner">
@@ -140,7 +114,7 @@ footer{background:var(--green);color:white;padding:2.5rem 3rem;display:flex;alig
 <div class="article-wrap">
 
   <div class="breadcrumb">
-    <a href="https://permakultur-konzepte.de">Start</a>
+    <a href="/">Start</a>
     <span>›</span>
     <a href="/blog/">Blog</a>
     <span>›</span>
@@ -189,26 +163,12 @@ footer{background:var(--green);color:white;padding:2.5rem 3rem;display:flex;alig
   <div class="article-cta">
     <h3>Unsicher, wo die<br><em>Struktur beginnt?</em></h3>
     <p>Ich schaue mir deine Fläche an und sage dir, wo die Gehölzstruktur sinnvoll hinkommt – bevor das erste Beet angelegt wird.</p>
-    <a class="btn-a" href="https://permakultur-konzepte.de/#analyse-planung">Jetzt anfragen →</a>
+    <a class="btn-a" href="/kontakt/?anliegen=planung">Jetzt anfragen →</a>
   </div>
 
 </div>
 
-<footer>
-  <div>
-    <div class="ft-b">Permakultur-Konzepte</div>
-    <div class="ft-s">Vincent Hahn · Für regenerative Flächennutzung</div>
-  </div>
-  <div class="ft-l">
-    <a href="https://permakultur-konzepte.de">Start</a>
-    <a href="https://permakultur-konzepte.de/#leistungen">Leistungen</a>
-    <a href="https://permakultur-konzepte.de/#ueber">Über mich</a>
-    <a href="/blog/">Blog</a>
-    <a href="https://permakultur-konzepte.de/#impressum">Impressum</a>
-    <a href="https://permakultur-konzepte.de/#datenschutz">Datenschutz</a>
-  </div>
-  <div class="ft-r">vincent@permakultur-konzepte.de<br><span style="font-size:0.7rem;opacity:0.4;">Demollstraße 10 · 82407 Wielenbach</span></div>
-</footer>
+<!-- @include blog-footer -->
 
 </body>
 </html>
