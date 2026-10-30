@@ -430,3 +430,8 @@ body[data-page="ueber"] #n-ueber{color:var(--green);font-weight:500;}
 }
 #faq-bot-send:hover { background: #1b4332; }
 #faq-bot-send:disabled { background: #aaa; cursor: not-allowed; }
+/* Links, die wie die bisherigen Buttons aussehen (echte <a href> statt show()) */
+a.btn-a,a.btn-p,a.btn-ow,a.ws-lnk,a.nav-logo{text-decoration:none;}
+a.btn-sm,a.ws-lnk{display:inline-block;text-decoration:none;}
+.ft-l a{display:flex;align-items:center;justify-content:center;text-align:center;font-size:0.78rem;color:rgba(255,255,255,0.45);text-decoration:none;font-family:'Jost',sans-serif;}
+.ft-l a:hover{color:var(--amber-light);}
