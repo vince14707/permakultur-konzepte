@@ -451,11 +451,5 @@ a.btn-sm,a.ws-lnk{display:inline-block;text-decoration:none;}
 .kurs-details summary::after{content:" +";}
 .kurs-details[open] summary::after{content:" –";}
 .kd-body{margin-top:0.6rem;background:white;border:1px solid rgba(28,74,42,0.1);border-radius:10px;box-shadow:0 2px 12px rgba(28,74,42,0.05);padding:1.1rem 1.5rem 0.6rem;font-size:0.82rem;color:var(--text-light);line-height:1.65;font-weight:300;}
+.kd-body p{margin:0 0 0.6rem;}
 .kd-body strong{color:var(--text);font-weight:500;}
-.kd-h{font-size:0.66rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--green);font-weight:600;margin:0.4rem 0 0.5rem;padding-top:0.6rem;border-top:1px solid rgba(28,74,42,0.08);}
-.kd-h:first-child{border-top:none;padding-top:0;}
-.kd-grid{display:grid;grid-template-columns:7.5rem 1fr;gap:0.35rem 0.9rem;margin-bottom:0.6rem;}
-.kd-k{color:var(--text);font-weight:500;}
-.kd-s{display:block;font-size:0.76rem;opacity:0.85;margin-top:0.15rem;}
-.kd-note{font-size:0.76rem;margin:0.4rem 0 0.6rem;opacity:0.85;}
-@media(max-width:600px){.kd-grid{grid-template-columns:6rem 1fr;}}
