@@ -443,11 +443,13 @@ a.btn-sm,a.ws-lnk{display:inline-block;text-decoration:none;}
 @media(min-width:901px){.tg-qr{display:flex;flex-direction:column;align-items:center;gap:0.4rem;margin-top:1.4rem;font-size:0.75rem;color:var(--text-light);}}
 
 /* Kursdetails (aufklappbar) */
-.kurs-details{max-width:480px;margin:1rem auto 0;background:white;border:1px solid rgba(28,74,42,0.1);border-radius:10px;box-shadow:0 2px 12px rgba(28,74,42,0.05);}
-.kurs-details summary{cursor:pointer;padding:0.9rem 1.5rem;font-size:0.85rem;font-weight:500;color:var(--green);list-style:none;}
+.kurs-details{width:100%;max-width:480px;margin:-0.5rem auto 0.3rem;}
+.kurs-details summary{cursor:pointer;text-align:center;padding:0.2rem 0;font-size:0.8rem;color:var(--green);list-style:none;}
+.kurs-details summary span{border-bottom:1px solid rgba(28,74,42,0.3);}
+.kurs-details summary:hover span{border-color:var(--green);}
 .kurs-details summary::-webkit-details-marker{display:none;}
 .kurs-details summary::after{content:" +";}
 .kurs-details[open] summary::after{content:" –";}
-.kd-body{padding:0 1.5rem 1.2rem;font-size:0.82rem;color:var(--text-light);line-height:1.65;font-weight:300;}
+.kd-body{margin-top:0.6rem;background:white;border:1px solid rgba(28,74,42,0.1);border-radius:10px;box-shadow:0 2px 12px rgba(28,74,42,0.05);padding:1.1rem 1.5rem 0.6rem;font-size:0.82rem;color:var(--text-light);line-height:1.65;font-weight:300;}
 .kd-body p{margin:0 0 0.6rem;}
 .kd-body strong{color:var(--text);font-weight:500;}
