@@ -92,7 +92,7 @@ Spalten: Name · Mail · Eingewilligt am · Wie eingewilligt · Über neues Syst
 **Inhalte:** Planungspraxis, Designmethoden, Zeichentechniken – von der Standortanalyse bis zum fertigen Plan.
 
 **Ablauf:**
-1. Vorbereitungs-Webinar (verpflichtend, 90 Min.): Bestandsaufnahme (wie, wo und was wird gemacht? Wer wird einbezogen? Warum so und warum ist sie wichtig?), benötigtes Material, Kursablauf (Ort, Einrichtung, Pausen)
+1. Vorbereitungs-Webinar (verpflichtend, 90 Min.): Bestandsaufnahme (wie, wo und was wird gemacht? Wer wird einbezogen? Warum so und warum ist sie wichtig?), benötigtes Material, Kursablauf (Ort, Einrichtung, Pausen); dazu Unterlagen zum Einlesen in die Gestaltungsgrundlagen
 2. Zwischen Webinar und Kurs: Teilnehmer erstellen Bestandsaufnahme und Vorherplan
 3. Präsenzkurs: Bestandsaufnahme besprechen, Maßstab wählen, Gestaltungselemente und Anordnung entwickeln, professionellen Entwurfsplan zeichnen; Abschluss: alle stellen Vorher- und Entwurfsplan kurz vor
 4. Ergebnis: eigener, umsetzungsfähiger Permakultur-Entwurfsplan
@@ -100,7 +100,7 @@ Spalten: Name · Mail · Eingewilligt am · Wie eingewilligt · Über neues Syst
 **Ort:** Landkreis Weilheim-Schongau, genauer Ort im Webinar
 **Teilnehmer:** min. 4, max. 6
 
-**Kosten (Selbsteinschätzung):** regulär 400–500 €, Frühbucher 300–400 € (maßgeblich: Anmeldedatum). Gemäß § 19 UStG keine USt.
+**Kosten (Selbsteinschätzung):** Frühbucher 300–400 € (maßgeblich: Anmeldedatum), regulär 400–500 €. Unterer Wert = Sozialpreis, oberer Wert = Unterstützerpreis. Gemäß § 19 UStG keine USt.
 **Enthalten:** Unterlagen zur Bestandsaufnahme, Pflanzlisten, Transparentpapier, Nutzung von Zeichen- und Buntstiften
 **Nicht enthalten:** Übernachtung, Verpflegung
 **Zahlung:** innerhalb von 7 Tagen nach Anmeldebestätigung; Platz fest mit Zahlungseingang
