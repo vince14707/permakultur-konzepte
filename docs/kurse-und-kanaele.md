@@ -101,7 +101,7 @@ Spalten: Name · Mail · Eingewilligt am · Wie eingewilligt · Über neues Syst
 **Teilnehmer:** min. 4, max. 6
 
 **Kosten (Selbsteinschätzung):** Frühbucher 300–400 € (maßgeblich: Anmeldedatum), regulär 400–500 €. Unterer Wert = Sozialpreis, oberer Wert = Unterstützerpreis. Gemäß § 19 UStG keine USt.
-**Enthalten:** Unterlagen zur Bestandsaufnahme und zu den Gestaltungsgrundlagen (Ausgabe im Webinar), Pflanzlisten, Transparentpapier, Nutzung von Zeichen- und Buntstiften
+**Enthalten:** Unterlagen zur Bestandsaufnahme und zu den Gestaltungsgrundlagen (Ausgabe im Webinar), Pflanzlisten, Transparentpapier, Zeichen- und Buntstifte zur Nutzung im Kurs (nicht zum Mitnehmen)
 **Nicht enthalten:** Übernachtung, Verpflegung
 **Zahlung:** innerhalb von 7 Tagen nach Anmeldebestätigung; Platz fest mit Zahlungseingang
 
