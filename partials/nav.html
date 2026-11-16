@@ -7,7 +7,7 @@
         <div class="nav-sub">für regenerative Flächennutzung</div>
       </div>
     </a>
-    <script>(function(){if(window.__fitSub)return;window.__fitSub=1;function w(el){var r=document.createRange();r.selectNodeContents(el);return r.getBoundingClientRect().width;}function fit(){document.querySelectorAll('.nav-logo').forEach(function(l){var b=l.querySelector('.nav-brand'),s=l.querySelector('.nav-sub');if(!b||!s)return;s.style.letterSpacing='';s.style.whiteSpace='nowrap';var bw=w(b),sw=w(s);if(!bw||!sw)return;var n=s.textContent.trim().length;var base=parseFloat(getComputedStyle(s).letterSpacing)||0;s.style.letterSpacing=(base+(bw-sw)/(n-1))+'px';});}fit();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);window.addEventListener('load',fit);window.addEventListener('resize',fit);})();</script>
+    <script>(function(){if(window.__fitSub)return;window.__fitSub=1;function w(el){var r=document.createRange();r.selectNodeContents(el);return r.getBoundingClientRect().width;}function fit(){document.querySelectorAll('.nav-logo').forEach(function(l){var b=l.querySelector('.nav-brand'),s=l.querySelector('.nav-sub');if(!b||!s)return;s.style.letterSpacing='';s.style.whiteSpace='nowrap';var bw=w(b),sw=w(s);if(!bw||!sw||bw<=sw)return;var n=s.textContent.trim().length;var base=parseFloat(getComputedStyle(s).letterSpacing)||0;s.style.letterSpacing=(base+(bw-sw)/(n-1))+'px';});}fit();if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit);window.addEventListener('load',fit);window.addEventListener('resize',fit);})();</script>
     <div class="nav-links">
       <a class="nl" href="/" id="n-home">Start</a>
       <a class="nl" href="/leistungen/" id="n-leistungen">Leistungen</a>
