@@ -27,7 +27,7 @@ OUT = ROOT / "dist"
 PARTIALS = ROOT / "partials"
 
 # Wird nicht veröffentlicht (nur oberste Ebene des Repos)
-EXCLUDE_TOP = {".git", ".github", "dist", "partials", "tools", "build.py",
+EXCLUDE_TOP = {".git", ".github", "dist", "docs", "partials", "tools", "build.py",
                ".gitignore", "README.md"}
 # Wird nirgends veröffentlicht
 EXCLUDE_ANY = {".DS_Store"}
