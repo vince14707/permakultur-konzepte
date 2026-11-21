@@ -83,12 +83,19 @@ function generateRechnungsnummer(isoDate) {
   return `${base}-${suffix}`;
 }
 
-function slugify(text) {
-  return text
-    .normalize("NFKD").replace(/[\u0300-\u036f]/g, "") // Umlaute etc. entfernen
+// Dateinamen-Slug: Umlaute transliterieren (ö->oe), nur an Wortgrenzen kürzen.
+// Optional überschreibbar per INVOICE_DATA.empfaenger.dateiSlug.
+function slugify(text, maxLen = 50) {
+  const slug = text
+    .replace(/ä/g, "ae").replace(/ö/g, "oe").replace(/ü/g, "ue")
+    .replace(/Ä/g, "Ae").replace(/Ö/g, "Oe").replace(/Ü/g, "Ue").replace(/ß/g, "ss")
+    .normalize("NFKD").replace(/[\u0300-\u036f]/g, "")
     .replace(/[^a-zA-Z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 40);
+    .replace(/^-+|-+$/g, "");
+  if (slug.length <= maxLen) return slug;
+  const cut = slug.slice(0, maxLen + 1);
+  const i = cut.lastIndexOf("-");
+  return i > 0 ? cut.slice(0, i) : slug.slice(0, maxLen);
 }
 
 function calendarWeek(isoDate) {
@@ -312,7 +319,7 @@ async function main() {
 
   const rechnungsnummer = generateRechnungsnummer(INVOICE_DATA.rechnungsdatum);
   const kw = calendarWeek(INVOICE_DATA.rechnungsdatum);
-  const kundenSlug = slugify(INVOICE_DATA.empfaenger.name);
+  const kundenSlug = INVOICE_DATA.empfaenger.dateiSlug || slugify(INVOICE_DATA.empfaenger.name);
   const filename = `KW${kw}_Rechnung_${rechnungsnummer}_${kundenSlug}.docx`;
   const outputPath = path.join(OUTPUT_DIR, filename);
 
