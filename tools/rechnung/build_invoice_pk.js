@@ -128,9 +128,10 @@ function calcColumnWidths(positionen) {
 const noBorder = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
 const cellNoBorders = { top: noBorder, bottom: noBorder, left: noBorder, right: noBorder };
 
-function cell(text, { bold = false, align = AlignmentType.LEFT, shade = null, color = BRAND.text, size = 20, width, font = BRAND.fontBody } = {}) {
+function cell(text, { bold = false, align = AlignmentType.LEFT, shade = null, color = BRAND.text, size = 20, width, font = BRAND.fontBody, columnSpan } = {}) {
   return new TableCell({
     width: { size: width, type: WidthType.DXA },
+    columnSpan,
     shading: shade ? { type: ShadingType.CLEAR, color: "auto", fill: shade } : undefined,
     borders: cellNoBorders,
     verticalAlign: VerticalAlign.CENTER,
@@ -183,10 +184,9 @@ function buildInvoiceTable(positionen) {
   const gesamtbetrag = positionen.reduce((s, p) => s + p.gesamtpreis, 0);
   const totalRow = new TableRow({
     children: [
-      cell("", { width: posW }),
-      cell("", { width: leistungW }),
-      cell("", { width: mengeW }),
-      cell("Gesamtbetrag", { bold: true, align: AlignmentType.RIGHT, width: einzelW }),
+      // Label über die ersten 4 Spalten verbunden -> genug Breite, bricht nie um,
+      // auch wenn ein Viewer eine breitere Ersatzschrift nutzt.
+      cell("Gesamtbetrag", { bold: true, align: AlignmentType.RIGHT, width: posW + leistungW + mengeW + einzelW, columnSpan: 4 }),
       cell(fmtEuro(gesamtbetrag), { bold: true, align: AlignmentType.RIGHT, width: gesamtW, color: BRAND.green }),
     ],
   });
@@ -241,8 +241,19 @@ function buildHeaderTable() {
   });
 }
 
+// Schriften ins .docx einbetten, damit Word/Pages/Vorschau ohne installierte
+// Fonts nicht auf breitere Ersatzschriften ausweichen (-> Umbrüche).
+function embeddedFonts() {
+  const f = (file) => fs.readFileSync(path.join(__dirname, "fonts", file));
+  return [
+    { name: BRAND.fontBody, data: f("Jost-Regular.ttf"), characterSet: "00" },
+    { name: BRAND.fontHead, data: f("PlayfairDisplay-Bold.ttf"), characterSet: "00" },
+  ];
+}
+
 function buildDocument(data, rechnungsnummer) {
   return new Document({
+    fonts: embeddedFonts(),
     sections: [
       {
         properties: {
